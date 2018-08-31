@@ -3,6 +3,7 @@
 dist/
 .gitignore
 .prettierignore
+LICENSE
 *.yml
 *.html
 *.gif
