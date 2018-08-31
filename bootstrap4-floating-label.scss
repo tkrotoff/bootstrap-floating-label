@@ -68,10 +68,11 @@ $label-top-position: calc(
   //
   // Hack:
   // input with a placeholder not showing the placeholder => there is text from the user in it
-  // Does not work under Edge and IE
-  > input[placeholder]:not(:placeholder-shown) + label {
+  //
+  // Edge and IE CSS parsers fail on :placeholder-shown, even inside @supports
+  /*> input[placeholder]:not(:placeholder-shown) + label {
     @extend %label-above-input;
-  }
+  }*/
 
   // With React, value attribute is present
   // - Matches <input value>
