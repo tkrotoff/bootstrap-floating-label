@@ -81,4 +81,9 @@ $label-top-position: calc(
 
   // Compensate 1ch padding-left
   left: calc(#{$input-padding-x} + #{$input-border-width} - 1ch);
+
+  // Make the label smaller like in Material Design
+  // See https://github.com/mui-org/material-ui/blob/v3.0.1/packages/material-ui/src/InputLabel/InputLabel.js#L29
+  transform: scale($floating-label-scale);
+  transform-origin: top left;
 }
