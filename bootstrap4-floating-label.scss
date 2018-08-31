@@ -37,6 +37,7 @@ $label-top-position: calc(
   // Initial state: hide the placeholder
   > input::placeholder {
     opacity: 0;
+    transition: $transition-fade;
   }
   // Except if <label> is before <input> => not a floating label
   > label + input::placeholder {
