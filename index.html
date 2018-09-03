@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bootstrap Floating Label</title>
+    <title>bootstrap-floating-label</title>
   </head>
 
   <body>
     <div class="container-fluid">
-      <h1>Bootstrap 4 Floating Label</h1>
-      <p>
-        Works in latest Chrome, Firefox and Safari
-        <br>
-        Works with any font family and size + uses Bootstrap variables
-      </p>
+      <h1>bootstrap-floating-label</h1>
 
-      <h2>bootstrap-floating-label with React</h2>
+      <h2>With React</h2>
       <div id="react-form"></div>
 
-      <h2>bootstrap-floating-label without React</h2>
+      <h2>Without React</h2>
       <form>
         <div class="form-group">
-          <input type="email" class="form-control" id="email1" placeholder="name@example.com">
-          <label for="email1">Email with placeholder</label>
-          <small class="text-muted">A little description about the field</small>
+          <input type="email" id="email-with-placeholder" class="form-control" placeholder="name@example.com">
+          <label for="email-with-placeholder">Email with placeholder</label>
         </div>
 
         <div class="form-group">
-          <input type="email" class="form-control" id="email2">
-          <label for="email2">Email without placeholder</label>
-          <small class="text-muted">A little description about the field</small>
+          <input type="email" id="email-without-placeholder" class="form-control">
+          <label for="email-without-placeholder">Email without placeholder</label>
+        </div>
+
+        <div class="form-group">
+          <textarea id="textarea-with-placeholder" class="form-control" rows="3" placeholder="Lorem ipsum dolor sit amet"></textarea>
+          <label for="textarea-with-placeholder">Textarea with placeholder</label>
+        </div>
+
+        <div class="form-group">
+          <textarea id="textarea-without-placeholder" class="form-control" rows="3"></textarea>
+          <label for="textarea-without-placeholder">Textarea without placeholder</label>
         </div>
       </form>
 
-      <h2>Regular Bootstrap form</h2>
+      <h2><a href="https://getbootstrap.com/docs/4.1/components/forms/#form-controls">Regular Bootstrap form</a></h2>
       <form>
         <div class="form-group">
           <label for="exampleFormControlInput1">Email address</label>

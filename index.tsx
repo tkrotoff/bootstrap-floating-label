@@ -5,12 +5,13 @@ import './index.scss';
 
 class Form extends React.Component {
   state = {
-    firstName: '',
-    lastName: '',
-    email: ''
+    reactEmailWithPlaceholder: '',
+    reactEmailWithoutPlaceholder: '',
+    reactTextareaWithPlaceholder: '',
+    reactTextareaWithoutPlaceholder: ''
   };
 
-  handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const target = e.target;
     this.setState({
       [target.name]: target.value
@@ -18,43 +19,63 @@ class Form extends React.Component {
   };
 
   render() {
-    const { firstName, lastName, email } = this.state;
+    const {
+      reactEmailWithPlaceholder,
+      reactEmailWithoutPlaceholder,
+      reactTextareaWithPlaceholder,
+      reactTextareaWithoutPlaceholder
+    } = this.state;
 
     return (
       <form>
         <div className="form-group">
           <input
-            name="firstName"
-            id="first-name"
-            value={firstName}
-            onChange={this.handleChange}
-            className="form-control"
-          />
-          <label htmlFor="first-name">First Name</label>
-        </div>
-
-        <div className="form-group">
-          <input
-            name="lastName"
-            id="last-name"
-            value={lastName}
-            onChange={this.handleChange}
-            className="form-control"
-          />
-          <label htmlFor="last-name">Last Name</label>
-        </div>
-
-        <div className="form-group">
-          <input
-            type="text"
-            name="email"
-            id="email"
-            value={email}
+            type="email"
+            id="react-email-with-placeholder"
+            name="reactEmailWithPlaceholder"
+            value={reactEmailWithPlaceholder}
             onChange={this.handleChange}
             className="form-control"
             placeholder="name@example.com"
           />
-          <label htmlFor="email">Email</label>
+          <label htmlFor="react-email-with-placeholder">Email with placeholder</label>
+        </div>
+
+        <div className="form-group">
+          <input
+            type="email"
+            id="react-email-without-placeholder"
+            name="reactEmailWithoutPlaceholder"
+            value={reactEmailWithoutPlaceholder}
+            onChange={this.handleChange}
+            className="form-control"
+          />
+          <label htmlFor="react-email-without-placeholder">Email without placeholder</label>
+        </div>
+
+        <div className="form-group">
+          <textarea
+            id="react-textarea-with-placeholder"
+            name="reactTextareaWithPlaceholder"
+            value={reactTextareaWithPlaceholder}
+            onChange={this.handleChange}
+            className="form-control"
+            rows={3}
+            placeholder="Lorem ipsum dolor sit amet"
+          />
+          <label htmlFor="react-textarea-with-placeholder">Textarea with placeholder</label>
+        </div>
+
+        <div className="form-group">
+          <textarea
+            id="react-textarea-without-placeholder"
+            name="reactTextareaWithoutPlaceholder"
+            value={reactTextareaWithoutPlaceholder}
+            onChange={this.handleChange}
+            className="form-control"
+            rows={3}
+          />
+          <label htmlFor="react-textarea-without-placeholder">Textarea without placeholder</label>
         </div>
       </form>
     );
