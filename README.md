@@ -6,7 +6,7 @@ Floating label for Bootstrap 4
 
 Demo: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label
 
-- Small: less than 100 lines of [SCSS](bootstrap4-floating-label.scss)
+- Small: less than 100 lines of [SCSS](src/bootstrap4-floating-label.scss)
 - Works in latest Chrome, Firefox and Safari
 - Lower support in IE11 and Edge ([`:placeholder-shown` not supported](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951))
 - Works with any font family and size
@@ -14,7 +14,7 @@ Demo: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label
 
 ## Usage
 
-Import [bootstrap4-floating-label.scss](bootstrap4-floating-label.scss) and then place `<label>` under `<input>` inside your [Bootstrap 4 code](https://getbootstrap.com/docs/4.1/components/forms/):
+Import [bootstrap4-floating-label.scss](src/bootstrap4-floating-label.scss) and then place `<label>` under `<input>` inside your [Bootstrap 4 code](https://getbootstrap.com/docs/4.1/components/forms/):
 
 ```HTML
 <div class="form-group">

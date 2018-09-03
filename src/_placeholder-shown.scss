@@ -1,0 +1,22 @@
+.form-group {
+  // Move the label above when the input contains text
+
+  // There is no CSS selector for input with a value entered by the user
+  // See [Detect if an input has text in it using CSS](https://stackoverflow.com/q/16952526)
+  //
+  // Hack:
+  // input with a placeholder not showing the placeholder => there is text from the user in it
+  //
+  // Edge and IE CSS parsers fail on :placeholder-shown, even inside @supports
+  > input[placeholder]:not(:placeholder-shown) + label,
+  > textarea[placeholder]:not(:placeholder-shown) + label {
+    @extend %label-above-input;
+  }
+
+  // If no placeholder and no value => always above
+  // Place an empty placeholder (<input placeholder="">) to get the label inside the input
+  > input:not([placeholder]):not([value]) + label,
+  > textarea:not([placeholder]):empty + label {
+    @extend %label-above-input;
+  }
+}

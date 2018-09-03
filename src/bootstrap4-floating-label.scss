@@ -64,46 +64,6 @@ $label-top-position: calc(
       @extend %label-above-input;
     }
   }
-
-  // Move the label above when the input contains text
-  //
-  // There is no CSS selector for input with a value entered by the user
-  // See [Detect if an input has text in it using CSS](https://stackoverflow.com/q/16952526)
-  //
-  // Hack:
-  // input with a placeholder not showing the placeholder => there is text from the user in it
-  //
-  // Edge and IE CSS parsers fail on :placeholder-shown, even inside @supports
-  > input[placeholder]:not(:placeholder-shown) + label,
-  > textarea[placeholder]:not(:placeholder-shown) + label {
-    @extend %label-above-input;
-  }
-
-  // If no placeholder and no value => always above
-  // Place an empty placeholder (<input placeholder="">) to get the label inside the input
-  > input:not([placeholder]):not([value]) + label {
-    @extend %label-above-input;
-  }
-  /* This fails with React
-  > textarea:not([placeholder]):empty + label {
-    @extend %label-above-input;
-  }
-  */
-
-  // With React, value attribute is present
-  // - Matches <input value>
-  // input[value=''] matches <input> instead of <input value> under IE11
-  > input[value=''] + label,
-  // - Matches <textarea></textarea>
-  > textarea:empty + label {
-    @extend %label-inside-input;
-  }
-  // - Matches <input value="hello">
-  > input[value]:not([value='']) + label,
-  // - Matches <textarea>hello</textarea>
-  > textarea:not(:empty) + label {
-    @extend %label-above-input;
-  }
 }
 
 %label-inside-input {

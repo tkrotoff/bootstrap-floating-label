@@ -1,0 +1,15 @@
+.form-group {
+  // Edge and IE11: there is no way to detect if the input contains text
+
+  // Label above input
+  > input + label,
+  > textarea + label {
+    @extend %label-above-input;
+  }
+
+  // Show the placeholder
+  > input::placeholder,
+  > textarea::placeholder {
+    color: inherit;
+  }
+}

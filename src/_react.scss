@@ -1,0 +1,13 @@
+.form-group {
+  // Move the label above when the input contains text
+
+  // With React, the value attribute is populated, see https://github.com/facebook/react/issues/11896
+
+  // Matches <input value="hello">
+  > input[value]:not([value='']) + label,
+  // Matches <textarea>hello</textarea>
+  // IE11: placeholder is copied inside <textarea>
+  > textarea:not(:empty) + label {
+    @extend %label-above-input;
+  }
+}

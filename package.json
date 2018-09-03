@@ -9,12 +9,12 @@
     "float",
     "label"
   ],
-  "main": "index.html",
+  "main": "src/test.html",
   "scripts": {
     "clean": "rm -rf dist .cache",
     "clean:all": "yarn run clean && rm -rf node_modules yarn.lock",
-    "start": "yarn run clean && parcel index.html --open",
-    "build": "yarn run clean && parcel build index.html --public-url ./",
+    "start": "yarn run clean && parcel src/test.html --open",
+    "build": "yarn run clean && parcel build src/test.html --public-url ./",
     "prettier": "prettier --write \"**/*\""
   },
   "dependencies": {
