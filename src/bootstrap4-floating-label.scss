@@ -67,19 +67,21 @@ $label-top-position: calc(
 }
 
 %label-inside-input {
+  top: 0;
+  left: 0;
+
   // See https://github.com/twbs/bootstrap/blob/v4.1.3/scss/_variables.scss#L410
-  top: calc(#{$input-padding-y} + #{$input-border-width});
-  left: calc(#{$input-padding-x} + #{$input-border-width});
+  padding: calc(#{$input-padding-y} + #{$input-border-width}) calc(#{$input-padding-x} + #{$input-border-width});
 }
 
 %label-above-input {
-  top: $label-top-position;
-
   // Hack to hide the input border under the label
   background-color: $input-bg;
+
+  top: $label-top-position;
+
   // ch = width of the character "0", see https://developer.mozilla.org/en-US/docs/Web/CSS/length#Units
-  padding-left: 1ch;
-  padding-right: 1ch;
+  padding: 0 1ch 0 1ch;
 
   // Compensate 1ch padding-left
   left: calc(#{$input-padding-x} + #{$input-border-width} - 1ch);
