@@ -8,7 +8,7 @@
  *   https://github.com/lusaxweb/vuesax/blob/master/src/components/vsInput/main.styl
  */
 
-// calc(move label at the top of the input - 1/3 of the label text height)
+// calc(move label at the top of the input - middle of the label text height)
 // See $input-height-inner and $input-height https://github.com/twbs/bootstrap/blob/v4.1.3/scss/_variables.scss#L445-L446
 //
 // Why not include the font descent (distance between the font baseline and its bounding box bottom)?
@@ -18,7 +18,7 @@
 // prettier-ignore
 $label-top-position: calc(
   #{- $font-size-base * $input-line-height} + #{$input-border-width}
-  + #{$font-size-sm * $input-line-height * 1 / 3}
+  + #{$font-size-sm * $input-line-height * 1 / 2}
 );
 
 .form-group {
