@@ -87,10 +87,10 @@ $label-top-position: calc(
   top: $label-top-position;
 
   // ch = width of the character "0", see https://developer.mozilla.org/en-US/docs/Web/CSS/length#Units
-  padding: 0 1ch 0 1ch;
+  padding: 0 .7ch 0 .7ch;
 
-  // Compensate 1ch padding-left
-  left: calc(#{$input-padding-x} + #{$input-border-width} - 1ch);
+  // Compensate .7ch padding-left
+  left: calc(#{$input-padding-x} + #{$input-border-width} - .7ch);
 
   width: initial;
 
