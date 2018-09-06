@@ -24,9 +24,6 @@ $label-top-position: calc(
 .form-group {
   position: relative;
 
-  // See https://github.com/twbs/bootstrap/blob/v4.1.3/scss/_reboot.scss#L313
-  margin-top: $form-group-margin-bottom + $label-margin-bottom;
-
   // Initial state: the label is inside the input
   > input + label,
   > textarea + label {
