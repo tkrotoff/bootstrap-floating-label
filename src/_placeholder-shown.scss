@@ -7,16 +7,17 @@
   // Hack:
   // input with a placeholder not showing the placeholder => there is text from the user in it
   //
-  // Edge and IE CSS parsers fail on :placeholder-shown, even inside @supports
+  // Not supported by Edge and IE
+  // => use of mixin instead of placeholder class
   > input[placeholder]:not(:placeholder-shown) + label,
   > textarea[placeholder]:not(:placeholder-shown) + label {
-    @extend %label-above-input;
+    @include label-above-input;
   }
 
   // If no placeholder and no value => always above
   // Place an empty placeholder (<input placeholder="">) to get the label inside the input
   > input:not([placeholder]):not([value]) + label,
   > textarea:not([placeholder]):empty + label {
-    @extend %label-above-input;
+    @include label-above-input;
   }
 }
