@@ -58,6 +58,9 @@ $label-top-position: calc(
   // Compensate .7ch padding-left
   left: calc(#{$input-padding-x} + #{$input-border-width} - .7ch);
 
+  // Visible when the label is above an input with a different background color
+  border-radius: $border-radius;
+
   font-size: $font-size-sm;
 }
 
