@@ -4,9 +4,6 @@ dist/
 .gitignore
 .prettierignore
 .browserslistrc
-.postcssrc
 LICENSE
-*.yml
-*.html
 *.gif
 yarn.lock

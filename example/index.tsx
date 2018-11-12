@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './test.scss';
+import './index.scss';
 
 class Form extends React.Component {
   state = {

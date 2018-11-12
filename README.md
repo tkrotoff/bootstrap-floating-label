@@ -4,7 +4,7 @@ Floating label for Bootstrap 4
 
 ![demo](demo.gif)
 
-Demo: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label
+Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label
 
 - Small: less than 100 lines of [SCSS](src/bootstrap4-floating-label.scss)
 - Works in latest Chrome, Firefox and Safari
