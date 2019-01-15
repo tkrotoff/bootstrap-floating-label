@@ -17,7 +17,7 @@ Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/
 Import [bootstrap4-floating-label.scss](src/bootstrap4-floating-label.scss) and then place `<label>` under `<input>` inside your [Bootstrap 4 code](https://getbootstrap.com/docs/4.1/components/forms/):
 
 ```HTML
-<div class="form-group">
+<div class="float-label">
   <input type="email" id="email" class="form-control" placeholder="name@example.com">
   <label for="email">Email</label>
 </div>

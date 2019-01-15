@@ -28,7 +28,7 @@ class Form extends React.Component {
 
     return (
       <form>
-        <div className="form-group">
+        <div className="form-group float-label">
           <input
             type="email"
             id="react-email-with-placeholder"
@@ -41,7 +41,7 @@ class Form extends React.Component {
           <label htmlFor="react-email-with-placeholder">Email with placeholder</label>
         </div>
 
-        <div className="form-group">
+        <div className="form-group float-label">
           <input
             type="email"
             id="react-email-without-placeholder"
@@ -53,7 +53,7 @@ class Form extends React.Component {
           <label htmlFor="react-email-without-placeholder">Email without placeholder</label>
         </div>
 
-        <div className="form-group">
+        <div className="form-group float-label">
           <textarea
             id="react-textarea-with-placeholder"
             name="reactTextareaWithPlaceholder"
@@ -66,7 +66,7 @@ class Form extends React.Component {
           <label htmlFor="react-textarea-with-placeholder">Textarea with placeholder</label>
         </div>
 
-        <div className="form-group">
+        <div className="form-group float-label">
           <textarea
             id="react-textarea-without-placeholder"
             name="reactTextareaWithoutPlaceholder"
