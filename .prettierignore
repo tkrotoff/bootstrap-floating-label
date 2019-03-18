@@ -3,6 +3,7 @@
 dist/
 .gitignore
 .prettierignore
+.editorconfig
 .browserslistrc
 LICENSE
 *.gif
