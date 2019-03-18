@@ -1,8 +1,10 @@
-# bootstrap-floating-label
+# @tkrotoff/bootstrap-floating-label
+
+[![Build Status](https://travis-ci.org/tkrotoff/bootstrap-floating-label.svg?branch=master)](https://travis-ci.org/tkrotoff/bootstrap-floating-label)
 
 Floating label for Bootstrap 4
 
-![demo](demo.gif)
+![demo](doc/demo.gif)
 
 Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/codesandbox.io
 
@@ -10,14 +12,16 @@ Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/
 - Works in latest Chrome, Firefox and Safari
 - Lower support in IE11 and Edge ([`:placeholder-shown` not supported](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951))
 - Works with any font family and size
-- Uses [Bootstrap variables](https://getbootstrap.com/docs/4.1/getting-started/theming/#variable-defaults): nothing hardcoded
+- Uses [Bootstrap variables](https://getbootstrap.com/docs/4.3/getting-started/theming/#variable-defaults): nothing hardcoded
 
 ## Usage
+
+`yarn add @tkrotoff/bootstrap-floating-label` or `npm install @tkrotoff/bootstrap-floating-label`
 
 Import [bootstrap4-floating-label.scss](src/bootstrap4-floating-label.scss) and then place `<label>` under `<input>` inside your [Bootstrap 4 code](https://getbootstrap.com/docs/4.1/components/forms/):
 
 ```HTML
-<div class="float-label">
+<div class="floating-label">
   <input type="email" id="email" class="form-control" placeholder="name@example.com">
   <label for="email">Email</label>
 </div>
