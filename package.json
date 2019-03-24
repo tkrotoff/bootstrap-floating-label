@@ -18,6 +18,7 @@
   "files": [
     "src/"
   ],
+  "sideEffects": false,
   "scripts": {
     "clean": "rm -rf dist .cache",
     "clean:all": "yarn run clean && rm -rf node_modules yarn.lock",
