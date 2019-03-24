@@ -25,7 +25,8 @@
     "build": "yarn run clean && parcel build example/index.html --public-url ./",
     "prettier": "prettier --write \"**/*\"",
     "precommit": "yarn prettier && yarn build",
-    "prepush": "yarn precommit"
+    "prepush": "yarn precommit",
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {},
   "peerDependencies": {
