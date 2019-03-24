@@ -20,7 +20,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rm -rf dist .cache",
+    "clean": "rm -rf dist .cache yarn-error.log",
     "clean:all": "yarn run clean && rm -rf node_modules yarn.lock",
     "start": "yarn run clean && parcel example/index.html --open",
     "build": "yarn run clean && parcel build example/index.html --public-url ./",
