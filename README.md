@@ -18,7 +18,13 @@ Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/
 
 `yarn add @tkrotoff/bootstrap-floating-label` or `npm install @tkrotoff/bootstrap-floating-label`
 
-Import [bootstrap4-floating-label.scss](src/bootstrap4-floating-label.scss) and then place `<label>` under `<input>` inside your [Bootstrap 4 code](https://getbootstrap.com/docs/4.1/components/forms/):
+Import [bootstrap4-floating-label.scss](src/bootstrap4-floating-label.scss)
+
+```SCSS
+@import '~@tkrotoff/bootstrap-floating-label/src/bootstrap4-floating-label';
+```
+
+Place `<label>` under `<input>` inside your [Bootstrap 4 code](https://getbootstrap.com/docs/4.1/components/forms/):
 
 ```HTML
 <div class="floating-label">
