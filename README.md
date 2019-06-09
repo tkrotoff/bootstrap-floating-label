@@ -1,5 +1,6 @@
 # @tkrotoff/bootstrap-floating-label
 
+[![npm version](https://badge.fury.io/js/%40tkrotoff%2Fbootstrap-floating-label.svg)](https://www.npmjs.com/package/@tkrotoff/bootstrap-floating-label)
 [![Build Status](https://travis-ci.org/tkrotoff/bootstrap-floating-label.svg?branch=master)](https://travis-ci.org/tkrotoff/bootstrap-floating-label)
 
 Floating label for Bootstrap 4
