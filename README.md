@@ -14,6 +14,8 @@ Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/
 - Works with any font family and size
 - Uses [Bootstrap variables](https://getbootstrap.com/docs/4.3/getting-started/theming/#variable-defaults): nothing hardcoded
 
+The Nielsen Norman Group talks about ["Placeholders and Floating Labels disadvantages"](https://www.nngroup.com/articles/form-design-placeholders/)
+
 ## Usage
 
 `yarn add @tkrotoff/bootstrap-floating-label` or `npm install @tkrotoff/bootstrap-floating-label`
