@@ -7,4 +7,3 @@ dist/
 .browserslistrc
 LICENSE
 *.gif
-yarn.lock

@@ -18,7 +18,7 @@ The Nielsen Norman Group talks about ["Placeholders and Floating Labels disadvan
 
 ## Usage
 
-`yarn add @tkrotoff/bootstrap-floating-label` or `npm install @tkrotoff/bootstrap-floating-label`
+`npm install @tkrotoff/bootstrap-floating-label`
 
 Import [bootstrap4-floating-label.scss](src/bootstrap4-floating-label.scss)
 
