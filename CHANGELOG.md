@@ -1,3 +1,7 @@
+## v0.0.4 (2019/06/09)
+
+- Upgrade npm packages
+
 ## v0.0.3 (2019/03/25)
 
 - Improve documentation
