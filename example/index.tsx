@@ -12,9 +12,9 @@ class Form extends React.Component {
   };
 
   handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const target = e.target;
+    const { name, value } = e.target;
     this.setState({
-      [target.name]: target.value
+      [name]: value
     });
   };
 

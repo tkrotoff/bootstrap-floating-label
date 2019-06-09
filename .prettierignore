@@ -1,9 +1,11 @@
 .git/
-.cache/
-dist/
 .gitignore
 .prettierignore
+.eslintignore
 .editorconfig
 .browserslistrc
+.cache/
+
+dist/
 LICENSE
 *.gif
