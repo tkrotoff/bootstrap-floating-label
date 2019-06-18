@@ -1,3 +1,7 @@
+## v0.1.0 (2019/06/19)
+
+- Document the "space placeholder"
+
 ## v0.0.4 (2019/06/09)
 
 - Upgrade npm packages
