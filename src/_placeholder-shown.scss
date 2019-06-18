@@ -7,7 +7,12 @@
   // Hack:
   // input with a placeholder not showing the placeholder => there is text from the user in it
   //
-  // Not supported by Edge and IE
+  // /!\ The placeholder value should be at least " "
+  //     otherwise :placeholder-shown won't work, see https://codepen.io/tkrotoff/pen/KjgyZj
+  //
+  // Not supported by Edge and IE:
+  // see https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951
+  // see https://caniuse.com/#search=placeholder-shown
   // => use of mixin instead of placeholder class
   > input[placeholder]:not(:placeholder-shown) + label,
   > textarea[placeholder]:not(:placeholder-shown) + label {

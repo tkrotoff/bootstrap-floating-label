@@ -1,7 +1,11 @@
 .floating-label {
   // Move the label above when the input contains text
 
-  // With React, the value attribute is populated, see https://github.com/facebook/react/issues/11896
+  // With React, in most cases the value attribute is populated, see https://github.com/facebook/react/issues/11896
+  //
+  // /!\ It doesn't get populate when ValidityState.badInput is true, see https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement:
+  // "If the user enters a value different from the value expected, this may return an empty string"
+  // See https://codepen.io/tkrotoff/pen/RLQQqo
 
   // stylelint-disable no-descending-specificity
 

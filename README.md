@@ -10,8 +10,8 @@ Floating label for Bootstrap 4
 Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/codesandbox.io
 
 - Small: less than 100 lines of [SCSS](src/bootstrap4-floating-label.scss)
-- Works in latest Chrome, Firefox and Safari
-- Lower support in IE11 and Edge ([`:placeholder-shown` not supported](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951))
+- Works in latest Chrome/Chromium, Firefox and Safari
+- Lower support in IE11 and Edge (see [`:placeholder-shown` not supported](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951) and [Can I use placeholder-shown?](https://caniuse.com/#search=placeholder-shown))
 - Works with any font family and size
 - Uses [Bootstrap variables](https://getbootstrap.com/docs/4.3/getting-started/theming/#variable-defaults): nothing hardcoded
 
@@ -38,7 +38,11 @@ Place `<label>` under `<input>` inside your [Bootstrap 4 code](https://getbootst
 
 ## Limitations
 
-When using React, the CSS works because [React populates the `value` attribute](https://github.com/facebook/react/issues/11896).
-Without React, there is no good way to [detect if the user entered text inside an input using CSS](https://stackoverflow.com/q/16952526).
+There is no good way to [detect if the user entered text inside an input using CSS](https://stackoverflow.com/q/16952526).
 
-If you are not using React, you should have at least an empty placeholder (`<input placeholder="">`) otherwise the label will be above the input instead of inside.
+With React, the CSS works in most cases because [React populates the `value` attribute](https://github.com/facebook/react/issues/11896).
+
+If you are not using React, you should have a "space placeholder" (`<input placeholder=" ">`, see https://codepen.io/tkrotoff/pen/KjgyZj) otherwise the label will be above the input instead of inside.
+
+You should also have a "space placeholder" with React and `<input type="number">`.
+Because when the user enters something different than a number, the [`HTMLInputElement.value`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement) property is empty (and [`ValidityState.badInput`](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) is true), see https://codepen.io/tkrotoff/pen/RLQQqo.
