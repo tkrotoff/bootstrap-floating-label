@@ -1,3 +1,8 @@
+## v0.2.0 (2019/09/06)
+
+- Support select
+- Fix z-index when using addons
+
 ## v0.1.0 (2019/06/19)
 
 - Document the "space placeholder"
