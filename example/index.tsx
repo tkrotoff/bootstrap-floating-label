@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './index.scss';
 
-function Form() {
+function Example() {
   const [state, setState] = useState({
     reactEmailWithPlaceholder: '',
     reactEmailWithoutPlaceholder: '',
@@ -27,7 +27,7 @@ function Form() {
   } = state;
 
   return (
-    <form>
+    <>
       <div className="form-group floating-label">
         <input
           type="email"
@@ -77,8 +77,8 @@ function Form() {
         />
         <label htmlFor="react-textarea-without-placeholder">Textarea without placeholder</label>
       </div>
-    </form>
+    </>
   );
 }
 
-ReactDOM.render(<Form />, document.getElementById('react-form'));
+ReactDOM.render(<Example />, document.getElementById('react-example'));
