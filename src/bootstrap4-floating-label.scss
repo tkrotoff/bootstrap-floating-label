@@ -76,22 +76,29 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   @include label-above-input;
 }
 
+%label-common-css {
+  // Breaks flexbox :-/
+  // ["An absolutely-positioned child of a flex container does not participate in flex layout"](https://stackoverflow.com/a/41033582/990356)
+  position: absolute;
+
+  // Truncate the text label if larger than the input
+  max-width: 100%;
+  @include text-truncate;
+}
+
 .floating-label {
   position: relative;
+
+  > select + label {
+    @extend %label-common-css;
+    @extend %label-above-input;
+  }
 
   // Initial state: the label is inside the input
   > input + label,
   > textarea + label {
-    // Breaks flexbox :-/
-    // ["An absolutely-positioned child of a flex container does not participate in flex layout"](https://stackoverflow.com/a/41033582/990356)
-    position: absolute;
-
-    // Truncate the text label if larger than the input
-    max-width: 100%;
-    @include text-truncate;
-
+    @extend %label-common-css;
     @include transition(all $transition-fast);
-
     @extend %label-inside-input;
   }
 
