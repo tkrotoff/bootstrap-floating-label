@@ -11,19 +11,6 @@
 //   https://codepen.io/peiche/pen/xOVpPo
 // - https://material-components.github.io/material-components-web-catalog/#/component/text-field
 
-// calc(move label at the top of the input - middle of the label text height)
-// See $input-height-inner and $input-height https://github.com/twbs/bootstrap/blob/v4.1.3/scss/_variables.scss#L445-L446
-//
-// Why not include the font descent (distance between the font baseline and its bounding box bottom)?
-// Problem: it differs from one font to another and cannot be computed in CSS
-// See [TrueType fundamentals](https://docs.microsoft.com/en-us/typography/opentype/spec/ttch01)
-// See [Meaning of top, ascent, baseline, descent, bottom, and leading in Android's FontMetrics](https://stackoverflow.com/a/27631737/990356)
-// prettier-ignore
-$label-top-position: calc(
-  #{- $font-size-base * $input-line-height} + #{$input-border-width}
-  + #{$font-size-sm * $input-line-height * 1 / 2}
-);
-
 %label-inside-input {
   top: 0;
   left: 0;
@@ -58,7 +45,8 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   // Hack to hide the input border under the label
   background-color: $input-bg;
 
-  top: $label-top-position;
+  top: 0; // Required for <select> (not <input> nor <textarea>), otherwise the label is strangely under <select>
+  transform: translateY(-55%); // See https://stackoverflow.com/a/44156191
 
   // ch = width of the character "0", see https://developer.mozilla.org/en-US/docs/Web/CSS/length#Units
   // !important otherwise padding from input.form-control-sm + label takes over
