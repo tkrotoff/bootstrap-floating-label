@@ -61,7 +61,8 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   top: $label-top-position;
 
   // ch = width of the character "0", see https://developer.mozilla.org/en-US/docs/Web/CSS/length#Units
-  padding: 0 0.7ch 0 0.7ch;
+  // !important otherwise padding from input.form-control-sm + label takes over
+  padding: 0 0.7ch 0 0.7ch !important;
 
   // Compensate .7ch padding-left
   left: calc(#{$input-padding-x} + #{$input-border-width} - 0.7ch);
@@ -103,6 +104,16 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: all $transition-fast;
     @extend %label-common-css;
     @extend %label-inside-input;
+  }
+  > input.form-control-sm + label,
+  > textarea.form-control-sm + label {
+    padding: calc(#{$input-padding-y-sm} + #{$input-border-width})
+      calc(#{$input-padding-x-sm} + #{$input-border-width});
+  }
+  > input.form-control-lg + label,
+  > textarea.form-control-lg + label {
+    padding: calc(#{$input-padding-y-lg} + #{$input-border-width})
+      calc(#{$input-padding-x-lg} + #{$input-border-width});
   }
 
   // Initial state: hide the placeholder
