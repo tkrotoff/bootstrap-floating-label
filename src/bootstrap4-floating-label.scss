@@ -100,8 +100,8 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   // Initial state: the label is inside the input
   > input + label,
   > textarea + label {
+    transition: all $transition-fast;
     @extend %label-common-css;
-    @include transition(all $transition-fast);
     @extend %label-inside-input;
   }
 
@@ -110,7 +110,7 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   > textarea::placeholder {
     color: transparent;
 
-    @include transition(color $transition-fast);
+    transition: color $transition-fast;
   }
   // Except if <label> is before <input> => not a floating label
   > label + input::placeholder,
