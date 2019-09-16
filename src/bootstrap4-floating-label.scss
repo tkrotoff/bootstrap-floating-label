@@ -46,6 +46,13 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: $input-bg;
 
   top: 0; // Required for <select> (not <input> nor <textarea>), otherwise the label is strangely under <select>
+
+  // FIXME Animation under Safari 12.1.2 "jumps" if negative %, no problem with px
+  // No problem under Chrome 76, Firefox 68, IE 10 & 11 and Edge 44
+  // See [Safari bug with transition and translateY: “jumping” element](https://stackoverflow.com/q/57960955)
+  // See [css transform + width + left + top transition jump on safari browser](https://stackoverflow.com/q/56500594)
+  // See [Transition both transform and size in Safari (9.1)](https://stackoverflow.com/q/39399431)
+  // See [Animating margins and padding with CSS Transition causes jumpy animation](https://stackoverflow.com/q/28203411)
   transform: translateY(-55%); // See https://stackoverflow.com/a/44156191
 
   // ch = width of the character "0", see https://developer.mozilla.org/en-US/docs/Web/CSS/length#Units
