@@ -106,6 +106,81 @@
       </div>
 
       <h2>
+        <a href="https://getbootstrap.com/docs/4.3/components/forms/#readonly">
+          Readonly
+        </a>
+      </h2>
+      <div class="form-group floating-label">
+        <input
+          id="readonly-input"
+          class="form-control"
+          placeholder="Readonly input here..."
+          readonly
+        />
+        <label for="readonly-input">Readonly input</label>
+      </div>
+
+      <h2>
+        <a href="https://getbootstrap.com/docs/4.3/components/forms/#disabled-forms">
+          Disabled forms
+        </a>
+      </h2>
+      <div class="form-group floating-label">
+        <input
+          id="disabledInput"
+          class="form-control"
+          placeholder="Disabled input here..."
+          disabled
+        />
+        <label for="disabledInput">Disabled input</label>
+      </div>
+      <fieldset disabled>
+        <div class="form-group floating-label">
+          <input id="fieldset-disabled-input" class="form-control" placeholder="Disabled input" />
+          <label for="fieldset-disabled-input">Disabled input</label>
+        </div>
+        <div class="form-group floating-label">
+          <select id="fieldset-disabled-select" class="form-control">
+            <option>Disabled select</option>
+          </select>
+          <label for="fieldset-disabled-select">Disabled select menu</label>
+        </div>
+      </fieldset>
+
+      <h2>
+        <a href="https://getbootstrap.com/docs/4.3/components/forms/#select-menu">
+          Select menu
+        </a>
+      </h2>
+      <div class="form-group floating-label">
+        <select id="custom-select-lg" class="custom-select custom-select-lg">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <label for="custom-select-lg">custom-select-lg</label>
+      </div>
+      <div class="form-group floating-label">
+        <select id="custom-select-sm" class="custom-select custom-select-sm">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <label for="custom-select-sm">custom-select-sm</label>
+      </div>
+      <div class="form-group floating-label">
+        <select id="custom-select-multiple" class="custom-select" multiple>
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <label for="custom-select-multiple">custom-select multiple</label>
+      </div>
+
+      <h2>
         <a href="https://getbootstrap.com/docs/4.3/components/input-group/#button-addons">
           Button addons
         </a>
@@ -132,6 +207,46 @@
               placeholder=" "
             />
             <label for="input-with-addon-prepend">Label</label>
+          </div>
+        </div>
+      </div>
+
+      <h2>
+        <a href="https://getbootstrap.com/docs/4.3/components/input-group/#custom-select">
+          Custom select
+        </a>
+      </h2>
+      <div class="form-group">
+        <div class="input-group floating-label">
+          <select id="inputGroupSelect02" class="custom-select">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <label for="inputGroupSelect02">inputGroupSelect02</label>
+          <div class="input-group-append">
+            <label class="input-group-text" for="inputGroupSelect02">Options</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+          </div>
+          <div class="floating-label" style="flex: 1">
+            <select
+              id="inputGroupSelect01"
+              class="custom-select"
+              style="border-top-left-radius: 0; border-bottom-left-radius: 0"
+            >
+              <option selected>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <label for="inputGroupSelect01">inputGroupSelect01</label>
           </div>
         </div>
       </div>
