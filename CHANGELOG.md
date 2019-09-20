@@ -1,3 +1,11 @@
+## v0.3.0 (2019/09/21)
+
+- Fix top position calculation
+- Supports form-control-sm and form-control-lg
+- More examples
+- Improve z-index usage: better with addon button under IE with slow animation
+- Upgrade npm packages
+
 ## v0.2.0 (2019/09/06)
 
 - Support select
