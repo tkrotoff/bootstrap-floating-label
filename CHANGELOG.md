@@ -1,3 +1,7 @@
+## v0.3.1 (2019/09/23)
+
+- v0.3.0: wrong branch published :-/
+
 ## v0.3.0 (2019/09/21)
 
 - Fix top position calculation
