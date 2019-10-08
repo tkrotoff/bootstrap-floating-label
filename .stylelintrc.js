@@ -11,5 +11,7 @@ module.exports = {
     'stylelint-prettier/recommended'
   ],
 
-  rules: {}
+  rules: {
+    'order/order': null
+  }
 };

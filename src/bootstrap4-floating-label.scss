@@ -53,7 +53,22 @@ $label-top-position-sm: #{- $label-height-sm + $label-height-sm / 2.5}; // -21px
 $label-height-lg: $font-size-lg * $input-line-height-lg; // 30px
 $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px + (30px / 2) = -15px
 
+%label-common {
+  // Breaks flexbox :-/
+  // ["An absolutely-positioned child of a flex container does not participate in flex layout"](https://stackoverflow.com/a/41033582/990356)
+  position: absolute;
+
+  // Same z-index as .form-control:focus, see https://github.com/twbs/bootstrap/blob/v4.3.1/scss/_input-group.scss#L36
+  z-index: 3;
+
+  // Truncate the text label if larger than the input
+  max-width: 100%;
+  @include text-truncate;
+}
+
 %label-inside-input {
+  @extend %label-common;
+
   top: 0;
   left: 0;
 
@@ -84,6 +99,8 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 // - if we want to group (share CSS) => use the placeholder class
 // - if we want to ungroup (clone CSS) => use the mixin
 @mixin label-above-input {
+  @extend %label-common;
+
   // Hack to hide the input border under the label
   background-color: $input-bg;
 
@@ -108,24 +125,10 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   @include label-above-input;
 }
 
-%label-common-css {
-  // Breaks flexbox :-/
-  // ["An absolutely-positioned child of a flex container does not participate in flex layout"](https://stackoverflow.com/a/41033582/990356)
-  position: absolute;
-
-  // Same z-index as .form-control:focus, see https://github.com/twbs/bootstrap/blob/v4.3.1/scss/_input-group.scss#L36
-  z-index: 3;
-
-  // Truncate the text label if larger than the input
-  max-width: 100%;
-  @include text-truncate;
-}
-
 .floating-label {
   position: relative;
 
   > select + label {
-    @extend %label-common-css;
     @extend %label-above-input;
   }
 
@@ -133,7 +136,6 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   > input + label,
   > textarea + label {
     transition: all $transition-fast;
-    @extend %label-common-css;
     @extend %label-inside-input;
   }
   > input.form-control-sm + label,
