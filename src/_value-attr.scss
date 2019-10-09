@@ -16,13 +16,13 @@
   > textarea:not(:empty) {
     + label,
     + label.label-sm {
-      @extend %label-above-input-sm;
+      @include label-above-input-sm;
     }
     + label.label-md {
-      @extend %label-above-input-md;
+      @include label-above-input-md;
     }
     + label.label-lg {
-      @extend %label-above-input-lg;
+      @include label-above-input-lg;
     }
   }
 }
