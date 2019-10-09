@@ -152,20 +152,24 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   top: $label-top-position-lg;
 }
 
+@mixin label-above-input {
+  + label,
+  + label.label-sm {
+    @include label-above-input-sm;
+  }
+  + label.label-md {
+    @include label-above-input-md;
+  }
+  + label.label-lg {
+    @include label-above-input-lg;
+  }
+}
+
 .floating-label {
   position: relative;
 
   > select {
-    + label,
-    + label.label-sm {
-      @include label-above-input-sm;
-    }
-    + label.label-md {
-      @include label-above-input-md;
-    }
-    + label.label-lg {
-      @include label-above-input-lg;
-    }
+    @include label-above-input;
   }
 
   // Initial state: the label is inside the input
@@ -206,16 +210,7 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     // - move the label above the input
-    + label,
-    + label.label-sm {
-      @include label-above-input-sm;
-    }
-    + label.label-md {
-      @include label-above-input-md;
-    }
-    + label.label-lg {
-      @include label-above-input-lg;
-    }
+    @include label-above-input;
   }
 }
 

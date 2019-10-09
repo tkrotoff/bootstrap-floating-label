@@ -16,31 +16,13 @@
   // => use of mixin instead of placeholder class
   > input[placeholder]:not(:placeholder-shown),
   > textarea[placeholder]:not(:placeholder-shown) {
-    + label,
-    + label.label-sm {
-      @include label-above-input-sm;
-    }
-    + label.label-md {
-      @include label-above-input-md;
-    }
-    + label.label-lg {
-      @include label-above-input-lg;
-    }
+    @include label-above-input;
   }
 
   // If no placeholder and no value => always above
   // Place an empty placeholder (<input placeholder="">) to get the label inside the input
   > input:not([placeholder]):not([value]),
   > textarea:not([placeholder]):empty {
-    + label,
-    + label.label-sm {
-      @include label-above-input-sm;
-    }
-    + label.label-md {
-      @include label-above-input-md;
-    }
-    + label.label-lg {
-      @include label-above-input-lg;
-    }
+    @include label-above-input;
   }
 }
