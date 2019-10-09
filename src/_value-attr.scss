@@ -6,6 +6,8 @@
   // /!\ It doesn't get populate when ValidityState.badInput is true, see https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement:
   // "If the user enters a value different from the value expected, this may return an empty string"
   // See https://codepen.io/tkrotoff/pen/RLQQqo
+  //
+  // /!\ React + IE10: no value attribute
 
   // stylelint-disable no-descending-specificity
 
