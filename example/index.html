@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8" />
+
     <title>bootstrap-floating-label</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -81,7 +83,7 @@
           class="form-control form-control-lg"
           placeholder=".form-control-lg"
         />
-        <label for="input-form-control-lg" class="font-size-lg">.form-control-lg</label>
+        <label for="input-form-control-lg">.form-control-lg</label>
       </div>
       <div class="form-group floating-label">
         <input
@@ -89,20 +91,63 @@
           class="form-control form-control-sm"
           placeholder=".form-control-sm"
         />
-        <label for="input-form-control-sm" class="font-size-sm">.form-control-sm</label>
+        <label for="input-form-control-sm">.form-control-sm</label>
       </div>
 
       <div class="form-group floating-label">
         <select id="select-form-control-lg" class="form-control form-control-lg">
           <option>Large select</option>
         </select>
-        <label for="select-form-control-lg" class="font-size-lg">Example select</label>
+        <label for="select-form-control-lg">Example select</label>
       </div>
       <div class="form-group floating-label">
         <select id="select-form-control-sm" class="form-control form-control-sm">
           <option>Small select</option>
         </select>
         <label for="select-form-control-sm">Example select</label>
+      </div>
+
+      <h2>
+        Label sizing: .label-sm (default), .label-md, .label-lg
+      </h2>
+      <div class="form-group floating-label">
+        <input
+          id="input-form-control-lg-label-lg"
+          class="form-control form-control-lg"
+          placeholder=".form-control-lg"
+        />
+        <label for="input-form-control-lg-label-lg" class="label-lg">.label-lg</label>
+      </div>
+      <div class="form-group floating-label">
+        <input id="input-label-md" class="form-control" placeholder="Default input" />
+        <label for="input-label-md" class="label-md">.label-md</label>
+      </div>
+      <div class="form-group floating-label">
+        <input
+          id="input-form-control-sm-label-sm"
+          class="form-control form-control-sm"
+          placeholder=".form-control-sm"
+        />
+        <label for="input-form-control-sm-label-sm">.label-sm (default)</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <select id="select-form-control-lg-label-lg" class="form-control form-control-lg">
+          <option>Large select</option>
+        </select>
+        <label for="select-form-control-lg-label-lg" class="label-lg">.label-lg</label>
+      </div>
+      <div class="form-group floating-label">
+        <select id="select-label-md" class="form-control">
+          <option>Default select</option>
+        </select>
+        <label for="select-label-md" class="label-md">Example select</label>
+      </div>
+      <div class="form-group floating-label">
+        <select id="select-form-control-sm-label-sm" class="form-control form-control-sm">
+          <option>Small select</option>
+        </select>
+        <label for="select-form-control-sm-label-sm">.label-sm (default)</label>
       </div>
 
       <h2>

@@ -2,9 +2,18 @@
   // Edge and IE11: there is no way to detect if the input contains text
 
   // Label above input
-  > input + label,
-  > textarea + label {
-    @extend %label-above-input;
+  > input,
+  > textarea {
+    + label,
+    + label.label-sm {
+      @extend %label-above-input-sm;
+    }
+    + label.label-md {
+      @extend %label-above-input-md;
+    }
+    + label.label-lg {
+      @extend %label-above-input-lg;
+    }
   }
 
   // Show the placeholder

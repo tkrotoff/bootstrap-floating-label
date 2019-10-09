@@ -14,15 +14,33 @@
   // see https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951
   // see https://caniuse.com/#search=placeholder-shown
   // => use of mixin instead of placeholder class
-  > input[placeholder]:not(:placeholder-shown) + label,
-  > textarea[placeholder]:not(:placeholder-shown) + label {
-    @include label-above-input;
+  > input[placeholder]:not(:placeholder-shown),
+  > textarea[placeholder]:not(:placeholder-shown) {
+    + label,
+    + label.label-sm {
+      @include label-above-input-sm;
+    }
+    + label.label-md {
+      @include label-above-input-md;
+    }
+    + label.label-lg {
+      @include label-above-input-lg;
+    }
   }
 
   // If no placeholder and no value => always above
   // Place an empty placeholder (<input placeholder="">) to get the label inside the input
-  > input:not([placeholder]):not([value]) + label,
-  > textarea:not([placeholder]):empty + label {
-    @include label-above-input;
+  > input:not([placeholder]):not([value]),
+  > textarea:not([placeholder]):empty {
+    + label,
+    + label.label-sm {
+      @include label-above-input-sm;
+    }
+    + label.label-md {
+      @include label-above-input-md;
+    }
+    + label.label-lg {
+      @include label-above-input-lg;
+    }
   }
 }

@@ -10,10 +10,19 @@
   // stylelint-disable no-descending-specificity
 
   // Matches <input value="hello">
-  > input[value]:not([value='']) + label,
+  > input[value]:not([value='']),
   // Matches <textarea>hello</textarea>
   // IE11: placeholder is copied inside <textarea>
-  > textarea:not(:empty) + label {
-    @extend %label-above-input;
+  > textarea:not(:empty) {
+    + label,
+    + label.label-sm {
+      @extend %label-above-input-sm;
+    }
+    + label.label-md {
+      @extend %label-above-input-md;
+    }
+    + label.label-lg {
+      @extend %label-above-input-lg;
+    }
   }
 }

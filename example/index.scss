@@ -7,10 +7,3 @@
 
 @import '../src/bootstrap4-floating-label';
 //@import '../src/edge+ie';
-
-.font-size-sm {
-  @include font-size($input-font-size-sm);
-}
-.font-size-lg {
-  @include font-size($input-font-size-lg);
-}

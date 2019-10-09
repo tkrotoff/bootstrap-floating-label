@@ -5,8 +5,15 @@
   // => use of mixin instead of placeholder class
   > input:-webkit-autofill,
   > textarea:-webkit-autofill {
-    + label {
-      @include label-above-input;
+    + label,
+    + label.label-sm {
+      @include label-above-input-sm;
+    }
+    + label.label-md {
+      @include label-above-input-md;
+    }
+    + label.label-lg {
+      @include label-above-input-lg;
     }
   }
 }

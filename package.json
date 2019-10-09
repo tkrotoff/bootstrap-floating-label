@@ -23,6 +23,7 @@
     "clean:all": "npm run clean && rm -rf node_modules package-lock.json",
     "start": "npm run clean && parcel example/index.html --open",
     "build": "npm run clean && parcel build example/index.html --public-url ./",
+    "build:dev": "npm run clean && NODE_ENV=development parcel build example/index.html --no-minify --public-url ./",
     "tsc": "tsc",
     "format": "prettier --write \"**/*\"",
     "lint": "eslint . '**/*.{js,jsx,ts,tsx}' && stylelint '**/*.scss'",

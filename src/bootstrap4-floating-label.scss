@@ -46,10 +46,10 @@
 //
 // top: - label height + (label height / 2)
 //
-$label-height-base: $font-size-base * $input-line-height; // 24px
-$label-top-position-base: #{- $label-height-base + $label-height-base / 2.5}; // -24px + (24px / 2) = -12px
 $label-height-sm: $font-size-sm * $input-line-height-sm; // 21px
 $label-top-position-sm: #{- $label-height-sm + $label-height-sm / 2.5}; // -21px + (21px / 2) = -10.5px
+$label-height-md: $font-size-base * $input-line-height; // 24px
+$label-top-position-md: #{- $label-height-md + $label-height-md / 2.5}; // -24px + (24px / 2) = -12px
 $label-height-lg: $font-size-lg * $input-line-height-lg; // 30px
 $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px + (30px / 2) = -15px
 
@@ -66,15 +66,11 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
   @include text-truncate;
 }
 
-%label-inside-input {
+%label-inside-input-common {
   @extend %label-common;
 
   top: 0;
   left: 0;
-
-  // See https://github.com/twbs/bootstrap/blob/v4.1.3/scss/_variables.scss#L410
-  padding: calc(#{$input-padding-y} + #{$input-border-width})
-    calc(#{$input-padding-x} + #{$input-border-width});
 
   // Material-UI uses "pointer-events: none" for TextField Outlined,
   // see https://github.com/mui-org/material-ui/blob/v3.3.2/packages/material-ui/src/NativeSelect/NativeSelect.js#L77
@@ -82,10 +78,47 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
   pointer-events: none;
 }
 
+%label-inside-input-sm {
+  @extend %label-inside-input-common;
+  @include font-size($input-font-size-sm);
+  padding: calc(#{$input-padding-y-sm} + #{$input-border-width})
+    calc(#{$input-padding-x-sm} + #{$input-border-width});
+}
+
+%label-inside-input-md {
+  @extend %label-inside-input-common;
+  @include font-size($input-font-size);
+
+  // See https://github.com/twbs/bootstrap/blob/v4.1.3/scss/_variables.scss#L410
+  padding: calc(#{$input-padding-y} + #{$input-border-width})
+    calc(#{$input-padding-x} + #{$input-border-width});
+}
+
+%label-inside-input-lg {
+  @extend %label-inside-input-common;
+  @include font-size($input-font-size-lg);
+  padding: calc(#{$input-padding-y-lg} + #{$input-border-width})
+    calc(#{$input-padding-x-lg} + #{$input-border-width});
+}
+
 // Taken from https://accounts.google.com/signin/v2/identifier
 // See https://github.com/twbs/bootstrap/blob/v4.1.3/scss/mixins/_transition.scss
 // See https://github.com/twbs/bootstrap/blob/v4.1.3/scss/_variables.scss#L241
 $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+%label-above-input-common {
+  @extend %label-common;
+
+  // Hack to hide the input border under the label
+  background-color: $input-bg;
+
+  padding: 0 0.3rem 0 0.3rem;
+
+  left: $input-padding-x-sm;
+
+  // Visible when the label is above an input with a different background color
+  border-radius: $border-radius;
+}
 
 // If a browser does not support a CSS pseudo-element, we cannot group/merge it with other CSS pseudo-elements:
 // input:focus + label, input:-webkit-autofill + label { ... } // Does not work in Firefox
@@ -98,55 +131,65 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 // This is a hack:
 // - if we want to group (share CSS) => use the placeholder class
 // - if we want to ungroup (clone CSS) => use the mixin
-@mixin label-above-input {
-  @extend %label-common;
-
-  // Hack to hide the input border under the label
-  background-color: $input-bg;
-
+@mixin label-above-input-sm {
+  @extend %label-above-input-common;
   font-size: $font-size-sm;
   top: $label-top-position-sm;
   // See https://stackoverflow.com/a/44156191
   // See [Safari bug with transition and translateY: “jumping” element](https://stackoverflow.com/q/57960955)
   //transform: translateY(-55%);
-
-  // ch = width of the character "0", see https://developer.mozilla.org/en-US/docs/Web/CSS/length#Units
-  // !important otherwise padding from input.form-control-sm + label takes over
-  padding: 0 0.7ch 0 0.7ch !important;
-
-  // Compensate .7ch padding-left
-  left: calc(#{$input-padding-x} + #{$input-border-width} - 0.7ch);
-
-  // Visible when the label is above an input with a different background color
-  border-radius: $border-radius;
+}
+%label-above-input-sm {
+  @include label-above-input-sm;
 }
 
-%label-above-input {
-  @include label-above-input;
+@mixin label-above-input-md {
+  @extend %label-above-input-common;
+  font-size: $font-size-base;
+  top: $label-top-position-md;
+}
+%label-above-input-md {
+  @include label-above-input-md;
+}
+
+@mixin label-above-input-lg {
+  @extend %label-above-input-common;
+  font-size: $font-size-lg;
+  top: $label-top-position-lg;
+}
+%label-above-input-lg {
+  @include label-above-input-lg;
 }
 
 .floating-label {
   position: relative;
 
-  > select + label {
-    @extend %label-above-input;
+  > select {
+    + label,
+    + label.label-sm {
+      @extend %label-above-input-sm;
+    }
+    + label.label-md {
+      @extend %label-above-input-md;
+    }
+    + label.label-lg {
+      @extend %label-above-input-lg;
+    }
   }
 
   // Initial state: the label is inside the input
   > input + label,
   > textarea + label {
     transition: all $transition-fast;
-    @extend %label-inside-input;
+    @extend %label-inside-input-md;
   }
   > input.form-control-sm + label,
   > textarea.form-control-sm + label {
-    padding: calc(#{$input-padding-y-sm} + #{$input-border-width})
-      calc(#{$input-padding-x-sm} + #{$input-border-width});
+    @extend %label-inside-input-sm;
   }
   > input.form-control-lg + label,
   > textarea.form-control-lg + label {
-    padding: calc(#{$input-padding-y-lg} + #{$input-border-width})
-      calc(#{$input-padding-x-lg} + #{$input-border-width});
+    @extend %label-inside-input-lg;
   }
 
   // Initial state: hide the placeholder
@@ -172,8 +215,15 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     // - move the label above the input
-    + label {
-      @extend %label-above-input;
+    + label,
+    + label.label-sm {
+      @extend %label-above-input-sm;
+    }
+    + label.label-md {
+      @extend %label-above-input-md;
+    }
+    + label.label-lg {
+      @extend %label-above-input-lg;
     }
   }
 }
