@@ -11,7 +11,7 @@ Floating label for Bootstrap 4
 
 Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/codesandbox.io
 
-- Small: less than 100 lines of [SCSS](src/bootstrap4-floating-label.scss)
+- Small: less than 200 lines of [SCSS](src/bootstrap4-floating-label.scss)
 - Works in latest Chrome/Chromium, Firefox and Safari
 - Lower support in IE11 and Edge (see [`:placeholder-shown` not supported](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951) and [Can I use placeholder-shown?](https://caniuse.com/#search=placeholder-shown))
 - Works with any font family and size
