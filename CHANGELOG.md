@@ -1,3 +1,7 @@
+## v0.4.0 (2019/10/10)
+
+- Add .label-md and .label-lg
+
 ## v0.3.1 (2019/09/23)
 
 - v0.3.0: wrong branch published :-/
