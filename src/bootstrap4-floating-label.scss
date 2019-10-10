@@ -53,6 +53,14 @@ $label-top-position-md: #{- $label-height-md + $label-height-md / 2.5}; // -24px
 $label-height-lg: $font-size-lg * $input-line-height-lg; // 30px
 $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px + (30px / 2) = -15px
 
+// Enable RTL mode
+html[dir="rtl"] {
+  %label-rtl {
+    left: auto !important;
+    right: 0;
+  }
+}
+
 @mixin label-common {
   // Breaks flexbox :-/
   // ["An absolutely-positioned child of a flex container does not participate in flex layout"](https://stackoverflow.com/a/41033582/990356)
@@ -76,6 +84,7 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
   // see https://github.com/mui-org/material-ui/blob/v3.3.2/packages/material-ui/src/NativeSelect/NativeSelect.js#L77
   // See ["the mouse event go "through" the element and target whatever is "underneath" that element instead"](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events)
   pointer-events: none;
+  @extend %label-rtl;
 }
 
 @mixin label-inside-input-sm {
