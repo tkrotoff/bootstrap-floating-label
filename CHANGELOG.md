@@ -1,3 +1,8 @@
+## v0.5.0 (2020/01/05)
+
+- RTL support
+- Update npm packages
+
 ## v0.4.0 (2019/10/10)
 
 - Add .label-md and .label-lg
