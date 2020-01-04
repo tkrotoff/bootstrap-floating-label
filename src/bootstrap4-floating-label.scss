@@ -66,6 +66,18 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
   @include text-truncate;
 }
 
+// Support for "right to left" languages
+[dir='rtl'] {
+  %label-inside-input-rtl {
+    left: auto !important;
+    right: 0;
+  }
+  %label-above-input-rtl {
+    left: auto !important;
+    right: $input-padding-x-sm;
+  }
+}
+
 @mixin label-inside-input-common {
   @include label-common;
 
@@ -76,6 +88,8 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
   // see https://github.com/mui-org/material-ui/blob/v3.3.2/packages/material-ui/src/NativeSelect/NativeSelect.js#L77
   // See ["the mouse event go "through" the element and target whatever is "underneath" that element instead"](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events)
   pointer-events: none;
+
+  @extend %label-inside-input-rtl;
 }
 
 @mixin label-inside-input-sm {
@@ -118,6 +132,8 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
   // Visible when the label is above an input with a different background color
   border-radius: $border-radius;
+
+  @extend %label-above-input-rtl;
 }
 
 // If a browser does not support a CSS pseudo-element, we cannot group/merge it with other CSS pseudo-elements:
