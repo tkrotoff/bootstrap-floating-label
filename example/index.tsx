@@ -7,6 +7,10 @@ function Example() {
   const [state, setState] = useState({
     reactEmailWithPlaceholder: '',
     reactEmailWithoutPlaceholder: '',
+    reactNumberWithPlaceholder: '',
+    reactNumberWithoutPlaceholder: '',
+    reactDateWithPlaceholder: '',
+    reactDateWithoutPlaceholder: '',
     reactTextareaWithPlaceholder: '',
     reactTextareaWithoutPlaceholder: ''
   });
@@ -22,6 +26,10 @@ function Example() {
   const {
     reactEmailWithPlaceholder,
     reactEmailWithoutPlaceholder,
+    reactNumberWithPlaceholder,
+    reactNumberWithoutPlaceholder,
+    reactDateWithPlaceholder,
+    reactDateWithoutPlaceholder,
     reactTextareaWithPlaceholder,
     reactTextareaWithoutPlaceholder
   } = state;
@@ -76,6 +84,60 @@ function Example() {
           rows={3}
         />
         <label htmlFor="react-textarea-without-placeholder">Textarea without placeholder</label>
+      </div>
+
+      <div className="form-group floating-label">
+        <input
+          type="number"
+          id="react-number-with-placeholder"
+          name="reactNumberWithPlaceholder"
+          value={reactNumberWithPlaceholder}
+          onChange={handleChange}
+          className="form-control"
+          placeholder="number"
+        />
+        <label htmlFor="react-number-with-placeholder">Number with placeholder</label>
+      </div>
+
+      <div className="form-group floating-label">
+        <input
+          type="number"
+          id="react-number-without-placeholder"
+          name="reactNumberWithoutPlaceholder"
+          value={reactNumberWithoutPlaceholder}
+          onChange={handleChange}
+          className="form-control"
+        />
+        <label htmlFor="react-number-without-placeholder">
+          Number without placeholder (needs placeholder hack)
+        </label>
+      </div>
+
+      <div className="form-group floating-label">
+        <input
+          type="date"
+          id="react-date-with-placeholder"
+          name="reactDateWithPlaceholder"
+          value={reactDateWithPlaceholder}
+          onChange={handleChange}
+          className="form-control"
+          placeholder="date"
+        />
+        <label htmlFor="react-date-with-placeholder">Date with placeholder</label>
+      </div>
+
+      <div className="form-group floating-label">
+        <input
+          type="date"
+          id="react-date-without-placeholder"
+          name="reactDateWithoutPlaceholder"
+          value={reactDateWithoutPlaceholder}
+          onChange={handleChange}
+          className="form-control"
+        />
+        <label htmlFor="react-date-without-placeholder">
+          Date without placeholder (needs placeholder hack)
+        </label>
       </div>
     </>
   );

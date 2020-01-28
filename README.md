@@ -46,5 +46,7 @@ With React, the CSS works in most cases because [React populates the `value` att
 
 If you are not using React, you should have a "space placeholder" (`<input placeholder=" ">`, see https://codepen.io/tkrotoff/pen/KjgyZj) otherwise the label will be above the input instead of inside.
 
-You should also have a "space placeholder" with React and `<input type="number">`.
+You need a "space placeholder" with React and `<input type="number">`.
 Because when the user enters something different than a number, the [`HTMLInputElement.value`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement) property is empty (and [`ValidityState.badInput`](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) is true), see https://codepen.io/tkrotoff/pen/RLQQqo.
+
+You need a "space placeholder" with React and `<input type="date">`.
