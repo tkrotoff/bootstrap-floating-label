@@ -1,6 +1,7 @@
 // @ts-check
 
-module.exports = {
+/** @type {import('eslint').Linter.Config} */
+const config = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json'
@@ -36,7 +37,7 @@ module.exports = {
     'no-plusplus': 'off',
     'spaced-comment': 'off',
 
-    // See [no-return-assign should be configurable to ignore arrow-functions](https://github.com/eslint/eslint/issues/9471)
+    // [no-return-assign should be configurable to ignore arrow-functions](https://github.com/eslint/eslint/issues/9471)
     'no-return-assign': 'off',
 
     'import/no-extraneous-dependencies': 'off',
@@ -64,3 +65,5 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn'
   }
 };
+
+module.exports = config;

@@ -2,7 +2,7 @@
   // Move the label above when the input contains text
 
   // There is no CSS selector for input with a value entered by the user
-  // See [Detect if an input has text in it using CSS](https://stackoverflow.com/q/16952526)
+  // [Detect if an input has text in it using CSS](https://stackoverflow.com/q/16952526)
   //
   // Hack:
   // input with a placeholder not showing the placeholder => there is text from the user in it
@@ -11,8 +11,8 @@
   //     otherwise :placeholder-shown won't work, see https://codepen.io/tkrotoff/pen/KjgyZj
   //
   // Not supported by Edge and IE:
-  // see https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951
-  // see https://caniuse.com/#search=placeholder-shown
+  // https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951
+  // https://caniuse.com/#search=placeholder-shown
   // => use of mixin instead of placeholder class
   > input[placeholder]:not(:placeholder-shown),
   > textarea[placeholder]:not(:placeholder-shown) {

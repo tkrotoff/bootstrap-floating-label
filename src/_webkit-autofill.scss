@@ -1,6 +1,6 @@
 .floating-label {
   // Chrome autofill feature
-  // See [autofill not being prefixed](https://github.com/postcss/autoprefixer/issues/626)
+  // [autofill not being prefixed](https://github.com/postcss/autoprefixer/issues/626)
   // Not supported by Firefox and other browsers
   // => use of mixin instead of placeholder class
   > input:-webkit-autofill,

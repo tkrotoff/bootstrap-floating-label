@@ -86,7 +86,7 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
 
   // Material-UI uses "pointer-events: none" for TextField Outlined,
   // see https://github.com/mui-org/material-ui/blob/v3.3.2/packages/material-ui/src/NativeSelect/NativeSelect.js#L77
-  // See ["the mouse event go "through" the element and target whatever is "underneath" that element instead"](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events)
+  // ["the mouse event go "through" the element and target whatever is "underneath" that element instead"](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events)
   pointer-events: none;
 
   @extend %label-inside-input-rtl;
@@ -103,7 +103,7 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
   @include label-inside-input-common;
   @include font-size($input-font-size);
 
-  // See https://github.com/twbs/bootstrap/blob/v4.1.3/scss/_variables.scss#L410
+  // https://github.com/twbs/bootstrap/blob/v4.1.3/scss/_variables.scss#L410
   padding: calc(#{$input-padding-y} + #{$input-border-width})
     calc(#{$input-padding-x} + #{$input-border-width});
 }
@@ -116,8 +116,8 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
 }
 
 // Taken from https://accounts.google.com/signin/v2/identifier
-// See https://github.com/twbs/bootstrap/blob/v4.1.3/scss/mixins/_transition.scss
-// See https://github.com/twbs/bootstrap/blob/v4.1.3/scss/_variables.scss#L241
+// https://github.com/twbs/bootstrap/blob/v4.1.3/scss/mixins/_transition.scss
+// https://github.com/twbs/bootstrap/blob/v4.1.3/scss/_variables.scss#L241
 $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
 @mixin label-above-input-common {
@@ -143,7 +143,7 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 // input:-webkit-autofill + label { ... } // Does not work in Firefox
 //
 // Sass does not allow to clone a placeholder class
-// See https://github.com/sass/sass/issues/2312
+// https://github.com/sass/sass/issues/2312
 // This is a hack:
 // - if we want to group (share CSS) => use a placeholder class
 // - if we want to ungroup (clone CSS) => use a mixin
@@ -151,8 +151,8 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   @include label-above-input-common;
   font-size: $font-size-sm;
   top: $label-top-position-sm;
-  // See https://stackoverflow.com/a/44156191
-  // See [Safari bug with transition and translateY: “jumping” element](https://stackoverflow.com/q/57960955)
+  // https://stackoverflow.com/a/44156191
+  // [Safari bug with transition and translateY: “jumping” element](https://stackoverflow.com/q/57960955)
   //transform: translateY(-55%);
 }
 
