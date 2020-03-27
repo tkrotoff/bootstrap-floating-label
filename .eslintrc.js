@@ -7,25 +7,18 @@ const config = {
     project: './tsconfig.json'
   },
   extends: [
-    // /!\ Order seems to matter
-
+    // /!\ Order matters: the next one overrides rules from the previous one
+    'plugin:jest/recommended',
     'airbnb',
+    // Already done by Airbnb
+    //'plugin:react/recommended'
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
     'prettier/react'
-
-    // Already done by Airbnb
-    //'plugin:react/recommended'
   ],
-  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
-  settings: {
-    react: {
-      version: 'detect'
-    }
-  },
+  plugins: ['simple-import-sort', 'react-hooks'],
   env: {
-    es6: true,
     browser: true
   },
   globals: {},
@@ -37,32 +30,68 @@ const config = {
     'no-plusplus': 'off',
     'spaced-comment': 'off',
 
-    // [no-return-assign should be configurable to ignore arrow-functions](https://github.com/eslint/eslint/issues/9471)
-    'no-return-assign': 'off',
-
     'import/no-extraneous-dependencies': 'off',
     'import/no-unresolved': 'off',
+    // [Avoid Export Default](https://basarat.gitbook.io/typescript/main-1/defaultisbad)
     'import/prefer-default-export': 'off',
 
-    'jsx-a11y/label-has-for': 'off',
-    'jsx-a11y/label-has-associated-control': 'off',
+    'simple-import-sort/sort': [
+      'error',
+      {
+        // https://github.com/lydell/eslint-plugin-simple-import-sort/blob/v5.0.2/src/sort.js#L3-L15
+        groups: [
+          // Side effect imports
+          ['^\\u0000'],
 
-    '@typescript-eslint/indent': 'off',
+          // Packages
+          [
+            // React first
+            '^react$',
+            // Things that start with a letter (or digit or underscore), or `@` followed by a letter
+            '^@?\\w'
+          ],
+
+          // Absolute imports and other imports such as Vue-style `@/foo`
+          // Anything that does not start with a dot
+          ['^[^.]'],
+
+          // Relative imports
+          [
+            // https://github.com/lydell/eslint-plugin-simple-import-sort/issues/15
+
+            // ../whatever/
+            '^\\.\\./(?=.*/)',
+            // ../
+            '^\\.\\./',
+            // ./whatever/
+            '^\\./(?=.*/)',
+            // Anything that starts with a dot
+            '^\\.',
+            // .html are not side effect imports
+            '^.+\\.html$',
+            // .scss/.css are not side effect imports
+            '^.+\\.s?css$'
+          ]
+        ]
+      }
+    ],
+
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/camelcase': 'off',
-    '@typescript-eslint/class-name-casing': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
-    '@typescript-eslint/no-empty-interface': 'off',
-    '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+
+    'jsx-a11y/label-has-associated-control': 'off',
 
     'react/no-unescaped-entities': 'off',
     'react/destructuring-assignment': 'off',
-    'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
 
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    'react-hooks/exhaustive-deps': 'error',
+
+    'jest/no-expect-resolves': 'error'
   }
 };
 
