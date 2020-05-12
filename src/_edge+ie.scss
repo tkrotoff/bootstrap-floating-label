@@ -9,6 +9,6 @@
   // Show the placeholder
   > input::placeholder,
   > textarea::placeholder {
-    color: inherit;
+    color: $input-placeholder-color;
   }
 }

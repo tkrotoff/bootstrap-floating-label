@@ -81,6 +81,8 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
 @mixin label-inside-input-common {
   @include label-common;
 
+  color: $input-placeholder-color;
+
   top: 0;
   left: 0;
 
@@ -125,6 +127,8 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
 @mixin label-above-input-common {
   @include label-common;
+
+  color: inherit;
 
   // Hack to hide the input border under the label
   background-color: $input-bg;
@@ -214,9 +218,12 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: color $transition-fast;
   }
   // Except if <label> is before <input> => not a floating label
+  //
+  // Instead of the 2 CSS statements we could have only one:
+  // "> :not(label) + input::placeholder" but it doesn't work, CSS is hard :-/
   > label + input::placeholder,
   > label + textarea::placeholder {
-    color: inherit;
+    color: $input-placeholder-color;
   }
 
   // When the input is focused:
@@ -225,7 +232,7 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     // - show the placeholder
     // FYI IE hides the placeholder when the input is focused, see https://stackoverflow.com/a/24319798/990356
     &::placeholder {
-      color: inherit;
+      color: $input-placeholder-color;
     }
 
     // - move the label above the input
