@@ -1,3 +1,8 @@
+## 0.6.0 (2020/05/12)
+
+- Placeholder should be grey (\$input-placeholder-color) instead of black
+- Update npm packages
+
 ## 0.5.1 (2020/03/17)
 
 - Improve documentation and example
