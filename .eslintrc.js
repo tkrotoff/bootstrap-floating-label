@@ -3,9 +3,7 @@
 /** @type {import('eslint').Linter.Config} */
 const config = {
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: './tsconfig.json'
-  },
+  parserOptions: {},
   extends: [
     // /!\ Order matters: the next one overrides rules from the previous one
     'plugin:jest/recommended',
