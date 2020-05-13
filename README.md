@@ -15,7 +15,7 @@ Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/
 - Works in latest Chrome/Chromium, Firefox and Safari
 - Lower support in IE11 and Edge (see [`:placeholder-shown` not supported](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951) and [Can I use placeholder-shown?](https://caniuse.com/#search=placeholder-shown))
 - Works with any font family and size
-- Uses [Bootstrap variables](https://getbootstrap.com/docs/4.3/getting-started/theming/#variable-defaults): nothing hardcoded
+- Uses [Bootstrap variables](https://getbootstrap.com/docs/4.5/getting-started/theming/#variable-defaults): nothing hardcoded
 
 The Nielsen Norman Group talks about ["Placeholders and Floating Labels disadvantages"](https://www.nngroup.com/articles/form-design-placeholders/)
 
