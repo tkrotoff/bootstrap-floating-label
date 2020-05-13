@@ -7,7 +7,7 @@
 
 Floating label for Bootstrap 4
 
-![demo](doc/demo.gif)
+<img src="doc/demo.gif" alt="demo" width="191">
 
 Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/codesandbox.io
 
