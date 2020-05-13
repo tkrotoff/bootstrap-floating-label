@@ -11,7 +11,7 @@ Floating label for Bootstrap 4
 
 Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/codesandbox.io
 
-- Small: less than 200 lines of [SCSS](src/bootstrap4-floating-label.scss)
+- Small: less than 200 lines of [SCSS](src/bootstrap-floating-label.scss)
 - Works with Chrome/Chromium, Firefox, Safari and IE >= 10
 - Lower support for Edge <= 18/44 (see [`:placeholder-shown` not supported](https://web.archive.org/web/20190624214425/https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951--placeholder-shown-css-pseudo-class) and [Can I use placeholder-shown?](https://caniuse.com/#search=placeholder-shown))
 - Works with any font family and size
@@ -23,15 +23,15 @@ The Nielsen Norman Group talks about ["Placeholders and Floating Labels disadvan
 
 `npm install @tkrotoff/bootstrap-floating-label`
 
-Import [bootstrap4-floating-label.scss](src/bootstrap4-floating-label.scss) after bootstrap.scss:
+Import [bootstrap-floating-label.scss](src/bootstrap-floating-label.scss) after bootstrap.scss:
 
 ```SCSS
 @import '~bootstrap/scss/bootstrap';
 
-@import '~@tkrotoff/bootstrap-floating-label/src/bootstrap4-floating-label';
+@import '~@tkrotoff/bootstrap-floating-label/src/bootstrap-floating-label';
 ```
 
-Place `<label>` under `<input>` inside your [Bootstrap 4 code](https://getbootstrap.com/docs/4.1/components/forms/):
+Place `<label>` under `<input>` inside your [Bootstrap code](https://getbootstrap.com/docs/4.5/components/forms/):
 
 ```HTML
 <div class="floating-label">
