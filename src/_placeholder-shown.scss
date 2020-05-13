@@ -8,14 +8,20 @@
   // input with a placeholder not showing the placeholder => there is text from the user in it
   //
   // /!\ The placeholder value should be at least " "
-  //     otherwise :placeholder-shown won't work, see https://codepen.io/tkrotoff/pen/KjgyZj
+  // otherwise :placeholder-shown won't work, see https://codepen.io/tkrotoff/pen/KjgyZj
   //
-  // Not supported by Edge and IE:
-  // https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951
-  // https://caniuse.com/#search=placeholder-shown
-  // => use of mixin instead of placeholder class
+  // Not supported by Edge <= 18/44:
+  // - https://web.archive.org/web/20190624214425/https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951--placeholder-shown-css-pseudo-class
+  // - https://caniuse.com/#search=placeholder-shown
+  // => use of mixin instead of Sass placeholder class
   > input[placeholder]:not(:placeholder-shown),
   > textarea[placeholder]:not(:placeholder-shown) {
+    @include label-above-input;
+  }
+
+  // FIXME https://github.com/postcss/autoprefixer/issues/1311
+  > input[placeholder]:not(:-ms-input-placeholder),
+  > textarea[placeholder]:not(:-ms-input-placeholder) {
     @include label-above-input;
   }
 

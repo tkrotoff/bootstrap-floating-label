@@ -7,14 +7,14 @@
   // "If the user enters a value different from the value expected, this may return an empty string"
   // https://codepen.io/tkrotoff/pen/RLQQqo
   //
-  // /!\ React + IE10: no value attribute
+  // /!\ React + IE 10: no value attribute
 
   // stylelint-disable no-descending-specificity
 
   // Matches <input value="hello">
   > input[value]:not([value='']),
   // Matches <textarea>hello</textarea>
-  // IE11: placeholder is copied inside <textarea>
+  // IE 11: placeholder is copied inside <textarea>
   > textarea:not(:empty) {
     @include label-above-input;
   }

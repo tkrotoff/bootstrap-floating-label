@@ -1,5 +1,5 @@
 .floating-label {
-  // Edge and IE11: there is no way to detect if the input contains text
+  // Edge <= 18/44: there is no way to detect if the input contains text
 
   > input,
   > textarea {
