@@ -1,3 +1,10 @@
+## 0.6.1 (2020/05/13)
+
+- Update demo.gif, make it retina
+- Datalist example
+- Bootstrap 4.5.0
+- TypeScript 3.9.2
+
 ## 0.6.0 (2020/05/12)
 
 - Placeholder should be grey (\$input-placeholder-color) instead of black
