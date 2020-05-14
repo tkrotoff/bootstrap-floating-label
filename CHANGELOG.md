@@ -1,3 +1,9 @@
+## 0.7.0 (2020/05/14)
+
+- Support for IE >= 10 :-ms-input-placeholder
+- Breaking change: rename bootstrap4-floating-label.scss to bootstrap-floating-label.scss
+  - I won't have the man power to maintain Bootstrap 4 & 5
+
 ## 0.6.1 (2020/05/13)
 
 - Update demo.gif, make it retina
