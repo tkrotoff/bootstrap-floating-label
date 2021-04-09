@@ -27,6 +27,7 @@
     "tsc": "tsc",
     "format": "prettier --write '**/*'",
     "lint": "eslint . '**/*.{js,jsx,ts,tsx}' && stylelint '**/*.scss'",
+    "prepare": "husky install",
     "precommit": "npm run format && npm run tsc && npm run lint && npm run build",
     "prepush": "npm run precommit",
     "prepublishOnly": "npm run build",
