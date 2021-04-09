@@ -84,6 +84,8 @@ const config = {
     'react/no-unescaped-entities': 'off',
     'react/destructuring-assignment': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
 
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error'

@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
     "noEmit": true,
+
+    // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html
+    // https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#jsx-factories
+    // If we keep "preserve", sometimes tsc-files generates "error TS2503: Cannot find namespace 'React'"
+    "jsx": "react-jsxdev",
+
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "jsx": "preserve",
     "esModuleInterop": true,
     "isolatedModules": true,
 
