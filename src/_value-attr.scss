@@ -16,6 +16,6 @@
   // Matches <textarea>hello</textarea>
   // IE 11: placeholder is copied inside <textarea>
   > textarea:not(:empty) {
-    @include label-above-input;
+    @include label-above-input();
   }
 }

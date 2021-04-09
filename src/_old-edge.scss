@@ -3,7 +3,7 @@
 
   > input,
   > textarea {
-    @include label-above-input;
+    @include label-above-input();
   }
 
   // Show the placeholder

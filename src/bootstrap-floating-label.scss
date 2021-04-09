@@ -65,28 +65,30 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
 
   // Truncate the text label if larger than the input
   max-width: 100%;
-  @include text-truncate;
+  @include text-truncate();
 }
 
+// stylelint-disable declaration-no-important
 // Support for "right to left" languages
 [dir='rtl'] {
   %label-inside-input-rtl {
-    left: auto !important;
     right: 0;
+    left: auto !important;
   }
   %label-above-input-rtl {
-    left: auto !important;
     right: $input-padding-x-sm;
+    left: auto !important;
   }
 }
+// stylelint-enable declaration-no-important
 
 @mixin label-inside-input-common {
-  @include label-common;
-
-  color: $input-placeholder-color;
+  @include label-common();
 
   top: 0;
   left: 0;
+
+  color: $input-placeholder-color;
 
   // FIXME Why the label shouldn't be clickable?
   //
@@ -100,14 +102,14 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
 }
 
 @mixin label-inside-input-sm {
-  @include label-inside-input-common;
+  @include label-inside-input-common();
   @include font-size($input-font-size-sm);
   padding: calc(#{$input-padding-y-sm} + #{$input-border-width})
     calc(#{$input-padding-x-sm} + #{$input-border-width});
 }
 
 @mixin label-inside-input-md {
-  @include label-inside-input-common;
+  @include label-inside-input-common();
   @include font-size($input-font-size);
 
   // https://github.com/twbs/bootstrap/blob/v4.1.3/scss/_variables.scss#L410
@@ -116,7 +118,7 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
 }
 
 @mixin label-inside-input-lg {
-  @include label-inside-input-common;
+  @include label-inside-input-common();
   @include font-size($input-font-size-lg);
   padding: calc(#{$input-padding-y-lg} + #{$input-border-width})
     calc(#{$input-padding-x-lg} + #{$input-border-width});
@@ -128,16 +130,16 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
 $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
 @mixin label-above-input-common {
-  @include label-common;
+  @include label-common();
+
+  left: $input-padding-x-sm;
+
+  padding: 0 0.3rem;
 
   color: inherit;
 
   // Hack to hide the input border under the label
   background-color: $input-bg;
-
-  padding: 0 0.3rem 0 0.3rem;
-
-  left: $input-padding-x-sm;
 
   // Visible when the label is above an input with a different background color
   border-radius: $border-radius;
@@ -157,36 +159,36 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 // - if we want to group (share CSS) => use a placeholder class
 // - if we want to ungroup (clone CSS) => use a mixin
 @mixin label-above-input-sm {
-  @include label-above-input-common;
-  font-size: $font-size-sm;
+  @include label-above-input-common();
   top: $label-top-position-sm;
+  font-size: $font-size-sm;
   // https://stackoverflow.com/a/44156191
   // [Safari bug with transition and translateY: “jumping” element](https://stackoverflow.com/q/57960955)
   //transform: translateY(-55%);
 }
 
 @mixin label-above-input-md {
-  @include label-above-input-common;
-  font-size: $font-size-base;
+  @include label-above-input-common();
   top: $label-top-position-md;
+  font-size: $font-size-base;
 }
 
 @mixin label-above-input-lg {
-  @include label-above-input-common;
-  font-size: $font-size-lg;
+  @include label-above-input-common();
   top: $label-top-position-lg;
+  font-size: $font-size-lg;
 }
 
 @mixin label-above-input {
   + label,
   + label.label-sm {
-    @include label-above-input-sm;
+    @include label-above-input-sm();
   }
   + label.label-md {
-    @include label-above-input-md;
+    @include label-above-input-md();
   }
   + label.label-lg {
-    @include label-above-input-lg;
+    @include label-above-input-lg();
   }
 }
 
@@ -194,22 +196,22 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 
   > select {
-    @include label-above-input;
+    @include label-above-input();
   }
 
   // Initial state: the label is inside the input
   > input + label,
   > textarea + label {
     transition: all $transition-fast;
-    @include label-inside-input-md;
+    @include label-inside-input-md();
   }
   > input.form-control-sm + label,
   > textarea.form-control-sm + label {
-    @include label-inside-input-sm;
+    @include label-inside-input-sm();
   }
   > input.form-control-lg + label,
   > textarea.form-control-lg + label {
-    @include label-inside-input-lg;
+    @include label-inside-input-lg();
   }
 
   // Initial state: hide the placeholder
@@ -238,7 +240,7 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     // - move the label above the input
-    @include label-above-input;
+    @include label-above-input();
   }
 }
 

@@ -1,3 +1,5 @@
+// stylelint-disable selector-no-vendor-prefix
+
 .floating-label {
   // Move the label above when the input contains text
 
@@ -16,19 +18,19 @@
   // => use of mixin instead of Sass placeholder class
   > input[placeholder]:not(:placeholder-shown),
   > textarea[placeholder]:not(:placeholder-shown) {
-    @include label-above-input;
+    @include label-above-input();
   }
 
   // FIXME https://github.com/postcss/autoprefixer/issues/1311
   > input[placeholder]:not(:-ms-input-placeholder),
   > textarea[placeholder]:not(:-ms-input-placeholder) {
-    @include label-above-input;
+    @include label-above-input();
   }
 
   // If no placeholder and no value => always above
   // Place an empty placeholder (<input placeholder="">) to get the label inside the input
   > input:not([placeholder]):not([value]),
   > textarea:not([placeholder]):empty {
-    @include label-above-input;
+    @include label-above-input();
   }
 }

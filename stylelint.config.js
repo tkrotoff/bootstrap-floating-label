@@ -3,17 +3,16 @@
 /** @type {Partial<import('stylelint').Configuration>} */
 const config = {
   extends: [
-    // As of 2020/03/18, stylelint-config-airbnb is still at v0.0.0
-    // Is this future proof?
-    // https://github.com/airbnb/css/pull/56
-    'stylelint-config-airbnb',
+    // /!\ Order matters: the next one overrides rules from the previous one
 
-    'stylelint-config-recommended-scss',
+    // Includes stylelint-config-recommended-scss and stylelint-config-standard
+    'stylelint-config-twbs-bootstrap/scss',
+
     'stylelint-prettier/recommended'
   ],
 
   rules: {
-    'order/order': null
+    'selector-no-qualifying-type': null
   }
 };
 
