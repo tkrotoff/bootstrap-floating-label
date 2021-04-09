@@ -16,7 +16,10 @@ const config = {
   trailingComma: 'none',
 
   // https://github.com/prettier/prettier/issues/6929
-  arrowParens: 'avoid'
+  arrowParens: 'avoid',
+
+  // https://prettier.io/blog/2018/11/07/1.15.0.html#whitespace-sensitive-formatting
+  htmlWhitespaceSensitivity: 'ignore'
 };
 
 module.exports = config;

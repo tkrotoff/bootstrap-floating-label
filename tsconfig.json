@@ -2,9 +2,11 @@
   "compilerOptions": {
     "noEmit": true,
     "target": "esnext",
-    "module": "commonjs",
-    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
     "esModuleInterop": true,
+    "isolatedModules": true,
 
     "strict": true,
     "noUnusedLocals": true,
