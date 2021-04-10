@@ -57,7 +57,7 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
 
 @mixin label-common {
   // Breaks flexbox :-/
-  // ["An absolutely-positioned child of a flex container does not participate in flex layout"](https://stackoverflow.com/a/41033582/990356)
+  // ["An absolutely-positioned child of a flex container does not participate in flex layout"](https://stackoverflow.com/a/41033582)
   position: absolute;
 
   // Same z-index as .form-control:focus, see https://github.com/twbs/bootstrap/blob/v4.3.1/scss/_input-group.scss#L36
@@ -232,7 +232,7 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   > input:focus,
   > textarea:focus {
     // - show the placeholder
-    // FYI IE hides the placeholder when the input is focused, see https://stackoverflow.com/a/24319798/990356
+    // FYI IE hides the placeholder when the input is focused, see https://stackoverflow.com/a/24319798
     &::placeholder {
       color: $input-placeholder-color;
     }
