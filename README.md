@@ -44,8 +44,4 @@ Place `<label>` under `<input>` inside your [Bootstrap code](https://getbootstra
 
 There is no good way to [detect if the user entered text inside an input using CSS](https://stackoverflow.com/q/16952526).
 
-Thus a placeholder is required (`<input placeholder="...">`, see https://codepen.io/tkrotoff/pen/KjgyZj) otherwise the label will be above the input instead of inside.
-
-With React, the CSS works in most cases because [React populates the `value` attribute](https://github.com/facebook/react/issues/11896).
-Still a placeholder is required with `<input type="number">`. Because when the user enters something different than a number, the [`HTMLInputElement.value`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement) property is empty (and [`ValidityState.badInput`](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) is true), see https://codepen.io/tkrotoff/pen/RLQQqo.
-A placeholder is also required with `<input type="date">`.
+Thus a placeholder is required `<input placeholder=" ">` otherwise the label will be above the input instead of inside (see https://codepen.io/tkrotoff/pen/KjgyZj).
