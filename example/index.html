@@ -12,307 +12,322 @@
     <div class="container-fluid">
       <h1>bootstrap-floating-label</h1>
 
+      <h2>input</h2>
+
       <div class="form-group floating-label">
-        <input
-          type="email"
-          id="email-with-placeholder"
+        <input id="text" class="form-control" placeholder=" " />
+        <label for="text">input text</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <input type="email" id="email" class="form-control" placeholder="name@example.com" />
+        <label for="email">input email</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <input type="number" id="number" class="form-control" placeholder=" " />
+        <label for="number">input number</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <input type="date" id="date" class="form-control" placeholder=" " />
+        <label for="date">input date</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <input id="input-disabled" class="form-control" placeholder=" " disabled />
+        <label for="input-disabled">input disabled</label>
+      </div>
+
+      <fieldset disabled>
+        <div class="form-group floating-label">
+          <input id="fieldset-disabled-input" class="form-control" placeholder=" " />
+          <label for="fieldset-disabled-input">fieldset disabled input</label>
+        </div>
+      </fieldset>
+
+      <div class="form-group floating-label">
+        <input id="input-readonly" class="form-control" placeholder=" " readonly />
+        <label for="input-readonly">input readonly</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <input id="input-plaintext" class="form-control-plaintext" placeholder=" " />
+        <label for="input-plaintext">input plaintext</label>
+      </div>
+
+      <h2>textarea</h2>
+
+      <div class="form-group floating-label">
+        <textarea
+          id="textarea"
           class="form-control"
-          placeholder="name@example.com"
-        />
-        <label for="email-with-placeholder">Email with placeholder</label>
-      </div>
-
-      <div class="form-group floating-label">
-        <input type="email" id="email-without-placeholder" class="form-control" />
-        <label for="email-without-placeholder">Email without placeholder</label>
-      </div>
-
-      <div class="form-group floating-label">
-        <input
-          type="number"
-          id="number-with-placeholder"
-          class="form-control"
-          placeholder="number"
-        />
-        <label for="number-with-placeholder">Number with placeholder</label>
-      </div>
-
-      <div class="form-group floating-label">
-        <input type="number" id="number-without-placeholder" class="form-control" />
-        <label for="number-without-placeholder">Number without placeholder</label>
-      </div>
-
-      <div class="form-group floating-label">
-        <input type="date" id="date-with-placeholder" class="form-control" placeholder="date" />
-        <label for="date-with-placeholder">Date with placeholder</label>
-      </div>
-
-      <div class="form-group floating-label">
-        <input type="date" id="date-without-placeholder" class="form-control" />
-        <label for="date-without-placeholder">Date without placeholder</label>
+          placeholder="Lorem ipsum dolor sit amet"
+        ></textarea>
+        <label for="textarea">textarea</label>
       </div>
 
       <div class="form-group floating-label">
         <textarea
-          id="textarea-with-placeholder"
+          id="textarea-disabled"
           class="form-control"
-          rows="3"
           placeholder="Lorem ipsum dolor sit amet"
-        ></textarea>
-        <label for="textarea-with-placeholder">Textarea with placeholder</label>
-      </div>
-
-      <div class="form-group floating-label">
-        <textarea id="textarea-without-placeholder" class="form-control" rows="3"></textarea>
-        <label for="textarea-without-placeholder">Textarea without placeholder</label>
-      </div>
-
-      <h2>
-        <a href="https://getbootstrap.com/docs/4.5/components/forms/#form-controls">Select</a>
-      </h2>
-      <div class="form-group floating-label">
-        <select class="form-control" id="exampleFormControlSelect1">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-        <label for="exampleFormControlSelect1">Example select</label>
-      </div>
-      <div class="form-group floating-label">
-        <select multiple class="form-control" id="exampleFormControlSelect2">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-        <label for="exampleFormControlSelect2">Example multiple select</label>
-      </div>
-
-      <h2>
-        <a href="https://getbootstrap.com/docs/4.5/components/forms/#sizing">Sizing</a>
-      </h2>
-      <div class="form-group floating-label">
-        <input
-          id="input-form-control-lg"
-          class="form-control form-control-lg"
-          placeholder=".form-control-lg"
-        />
-        <label for="input-form-control-lg">.form-control-lg</label>
-      </div>
-      <div class="form-group floating-label">
-        <input
-          id="input-form-control-sm"
-          class="form-control form-control-sm"
-          placeholder=".form-control-sm"
-        />
-        <label for="input-form-control-sm">.form-control-sm</label>
-      </div>
-
-      <div class="form-group floating-label">
-        <select id="select-form-control-lg" class="form-control form-control-lg">
-          <option>Large select</option>
-        </select>
-        <label for="select-form-control-lg">Example select</label>
-      </div>
-      <div class="form-group floating-label">
-        <select id="select-form-control-sm" class="form-control form-control-sm">
-          <option>Small select</option>
-        </select>
-        <label for="select-form-control-sm">Example select</label>
-      </div>
-
-      <h2>Label sizing: .label-sm (default), .label-md, .label-lg</h2>
-      <div class="form-group floating-label">
-        <input
-          id="input-form-control-lg-label-lg"
-          class="form-control form-control-lg"
-          placeholder=".form-control-lg"
-        />
-        <label for="input-form-control-lg-label-lg" class="label-lg">.label-lg</label>
-      </div>
-      <div class="form-group floating-label">
-        <input id="input-label-md" class="form-control" placeholder="Default input" />
-        <label for="input-label-md" class="label-md">.label-md</label>
-      </div>
-      <div class="form-group floating-label">
-        <input
-          id="input-form-control-sm-label-sm"
-          class="form-control form-control-sm"
-          placeholder=".form-control-sm"
-        />
-        <label for="input-form-control-sm-label-sm">.label-sm (default)</label>
-      </div>
-
-      <div class="form-group floating-label">
-        <select id="select-form-control-lg-label-lg" class="form-control form-control-lg">
-          <option>Large select</option>
-        </select>
-        <label for="select-form-control-lg-label-lg" class="label-lg">.label-lg</label>
-      </div>
-      <div class="form-group floating-label">
-        <select id="select-label-md" class="form-control">
-          <option>Default select</option>
-        </select>
-        <label for="select-label-md" class="label-md">Example select</label>
-      </div>
-      <div class="form-group floating-label">
-        <select id="select-form-control-sm-label-sm" class="form-control form-control-sm">
-          <option>Small select</option>
-        </select>
-        <label for="select-form-control-sm-label-sm">.label-sm (default)</label>
-      </div>
-
-      <h2>
-        <a href="https://getbootstrap.com/docs/4.5/components/forms/#readonly">Readonly</a>
-      </h2>
-      <div class="form-group floating-label">
-        <input
-          id="readonly-input"
-          class="form-control"
-          placeholder="Readonly input here..."
-          readonly
-        />
-        <label for="readonly-input">Readonly input</label>
-      </div>
-
-      <h2>
-        <a href="https://getbootstrap.com/docs/4.5/components/forms/#disabled-forms">
-          Disabled forms
-        </a>
-      </h2>
-      <div class="form-group floating-label">
-        <input
-          id="disabledInput"
-          class="form-control"
-          placeholder="Disabled input here..."
           disabled
-        />
-        <label for="disabledInput">Disabled input</label>
+        ></textarea>
+        <label for="textarea-disabled">textarea disabled</label>
       </div>
+
       <fieldset disabled>
         <div class="form-group floating-label">
-          <input id="fieldset-disabled-input" class="form-control" placeholder="Disabled input" />
-          <label for="fieldset-disabled-input">Disabled input</label>
+          <textarea
+            id="fieldset-disabled-textarea"
+            class="form-control"
+            placeholder="Lorem ipsum dolor sit amet"
+          ></textarea>
+          <label for="fieldset-disabled-textarea">fieldset disabled textarea</label>
         </div>
+      </fieldset>
+
+      <div class="form-group floating-label">
+        <textarea
+          id="textarea-readonly"
+          class="form-control"
+          placeholder="Lorem ipsum dolor sit amet"
+          readonly
+        ></textarea>
+        <label for="textarea-readonly">textarea readonly</label>
+      </div>
+
+      <h2>select</h2>
+
+      <div class="form-group floating-label">
+        <select class="form-control" id="select">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <label for="select">select</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <select class="form-control" id="select-disabled" disabled>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <label for="select-disabled">select disabled</label>
+      </div>
+
+      <fieldset disabled>
         <div class="form-group floating-label">
           <select id="fieldset-disabled-select" class="form-control">
-            <option>Disabled select</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
           </select>
-          <label for="fieldset-disabled-select">Disabled select menu</label>
+          <label for="fieldset-disabled-select">fieldset disabled select</label>
+        </div>
+      </fieldset>
+
+      <!-- [<select> cannot be readonly](https://stackoverflow.com/a/54955886) -->
+
+      <div class="form-group floating-label">
+        <select multiple class="form-control" id="select-multiple">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <label for="select-multiple">select multiple</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <select class="custom-select" id="custom-select">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <label for="custom-select">custom-select</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <select class="custom-select" id="custom-select-disabled" disabled>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <label for="custom-select-disabled">custom-select disabled</label>
+      </div>
+
+      <fieldset disabled>
+        <div class="form-group floating-label">
+          <select class="custom-select" id="fieldset-disabled-custom-select">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <label for="fieldset-disabled-custom-select">fieldset disabled custom-select</label>
         </div>
       </fieldset>
 
       <h2>
-        <a href="https://getbootstrap.com/docs/4.5/components/forms/#select-menu">Select menu</a>
+        <a href="https://getbootstrap.com/docs/4.6/components/forms/#sizing">Sizing</a>
       </h2>
+
       <div class="form-group floating-label">
-        <select id="custom-select-lg" class="custom-select custom-select-lg">
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        <label for="custom-select-lg">custom-select-lg</label>
-      </div>
-      <div class="form-group floating-label">
-        <select id="custom-select-sm" class="custom-select custom-select-sm">
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        <label for="custom-select-sm">custom-select-sm</label>
-      </div>
-      <div class="form-group floating-label">
-        <select id="custom-select-multiple" class="custom-select" multiple>
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        <label for="custom-select-multiple">custom-select multiple</label>
+        <input id="input-form-control-lg" class="form-control form-control-lg" placeholder=" " />
+        <label for="input-form-control-lg">input form-control-lg</label>
       </div>
 
-      <h2>
-        <a href="https://getbootstrap.com/docs/4.5/components/input-group/#button-addons">
-          Button addons
-        </a>
-      </h2>
-      <div class="form-group">
-        <div class="input-group floating-label">
-          <input id="input-addon-append" class="form-control" placeholder=" " />
-          <label for="input-addon-append">Label</label>
-          <div class="input-group-append">
-            <button type="button" class="btn btn-outline-secondary">Button</button>
-          </div>
-        </div>
+      <div class="form-group floating-label">
+        <input id="input-form-control-sm" class="form-control form-control-sm" placeholder=" " />
+        <label for="input-form-control-sm">input form-control-sm</label>
       </div>
+
+      <div class="form-group floating-label">
+        <select id="select-form-control-lg" class="form-control form-control-lg">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <label for="select-form-control-lg">select form-control-lg</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <select id="select-form-control-sm" class="form-control form-control-sm">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <label for="select-form-control-sm">select form-control-sm</label>
+      </div>
+
+      <h2>Label sizing</h2>
+
+      <div class="form-group floating-label">
+        <input id="input-label-lg" class="form-control form-control-lg" placeholder=" " />
+        <label for="input-label-lg" class="label-lg">label-lg</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <input id="input-label-md" class="form-control" placeholder=" " />
+        <label for="input-label-md" class="label-md">label-md</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <input id="input-label-sm" class="form-control form-control-sm" placeholder=" " />
+        <label for="input-label-sm">label-sm</label>
+      </div>
+
+      <br />
+
+      <div class="form-group floating-label">
+        <select id="select-label-lg" class="form-control form-control-lg">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <label for="select-label-lg" class="label-lg">label-lg</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <select id="select-label-md" class="form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <label for="select-label-md" class="label-md">label-md</label>
+      </div>
+
+      <div class="form-group floating-label">
+        <select id="select-label-sm" class="form-control form-control-sm">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <label for="select-label-sm">label-sm</label>
+      </div>
+
+      <h2>input-group</h2>
+
       <div class="form-group">
         <div class="input-group">
           <div class="input-group-prepend">
-            <button type="button" class="btn btn-outline-secondary">Button</button>
+            <span class="input-group-text">prepend</span>
           </div>
           <div class="floating-label" style="flex: 1">
             <input
-              id="input-with-addon-prepend"
+              id="input-group-prepend"
               class="form-control"
               style="border-top-left-radius: 0; border-bottom-left-radius: 0"
               placeholder=" "
             />
-            <label for="input-with-addon-prepend">Label</label>
+            <label for="input-group-prepend">input-group prepend</label>
           </div>
         </div>
       </div>
 
-      <h2>
-        <a href="https://getbootstrap.com/docs/4.5/components/input-group/#custom-select">
-          Custom select
-        </a>
-      </h2>
       <div class="form-group">
         <div class="input-group floating-label">
-          <select id="inputGroupSelect02" class="custom-select">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <label for="inputGroupSelect02">inputGroupSelect02</label>
+          <input id="input-group-append" class="form-control" placeholder=" " />
+          <label for="input-group-append">input-group append</label>
           <div class="input-group-append">
-            <label class="input-group-text" for="inputGroupSelect02">Options</label>
+            <span class="input-group-text">append</span>
           </div>
         </div>
       </div>
+
       <div class="form-group">
         <div class="input-group">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+            <span class="input-group-text">prepend</span>
           </div>
           <div class="floating-label" style="flex: 1">
-            <select
-              id="inputGroupSelect01"
-              class="custom-select"
-              style="border-top-left-radius: 0; border-bottom-left-radius: 0"
-            >
-              <option selected>Choose...</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-            <label for="inputGroupSelect01">inputGroupSelect01</label>
+            <input
+              id="input-group-prepend-append"
+              class="form-control"
+              style="border-radius: 0"
+              placeholder=" "
+            />
+            <label for="input-group-prepend-append">input-group prepend append</label>
+          </div>
+          <div class="input-group-append">
+            <span class="input-group-text">append</span>
           </div>
         </div>
       </div>
 
-      <h2>Support for "right to left" languages</h2>
+      <h2>RTL</h2>
+
       <bdo dir="rtl">
         <div class="form-group floating-label">
-          <input id="input-rtl" class="form-control" placeholder="input RTL" />
+          <input id="input-rtl" class="form-control" placeholder=" " />
           <label for="input-rtl">input RTL</label>
         </div>
+
         <div class="form-group floating-label">
           <select class="form-control" id="select-rtl">
             <option>1</option>
@@ -326,16 +341,12 @@
       </bdo>
 
       <h2>
-        <a href="https://github.com/twbs/bootstrap/pull/29058">Datalists</a>
+        <a href="https://github.com/twbs/bootstrap/pull/29058">datalist</a>
       </h2>
+
       <div class="form-group floating-label">
-        <input
-          id="exampleDataList"
-          list="datalistOptions"
-          class="form-control"
-          placeholder="Type to search..."
-        />
-        <label for="exampleDataList">Datalist example</label>
+        <input id="input-datalist" list="datalistOptions" class="form-control" placeholder=" " />
+        <label for="input-datalist">input datalist</label>
         <datalist id="datalistOptions">
           <option value="San Francisco" />
           <option value="New York" />
@@ -345,22 +356,17 @@
         </datalist>
       </div>
 
-      <h2>Regular Bootstrap input</h2>
+      <h2>Label before input</h2>
+
       <div class="form-group">
-        <label for="input-with-placeholder">Input text with placeholder</label>
-        <input
-          id="input-with-placeholder"
-          class="form-control"
-          placeholder="Lorem ipsum dolor sit amet"
-        />
+        <label for="input">input text + placeholder</label>
+        <input id="input" class="form-control" placeholder="Lorem ipsum dolor sit amet" />
       </div>
 
       <div class="form-group floating-label">
-        <label for="input-with-placeholder-floating-label">
-          Input text with placeholder + .floating-label: test .floating-label doesn't mess things up
-        </label>
+        <label for="input-floating-label">input text + placeholder + floating-label</label>
         <input
-          id="input-with-placeholder-floating-label"
+          id="input-floating-label"
           class="form-control"
           placeholder="Lorem ipsum dolor sit amet"
         />
