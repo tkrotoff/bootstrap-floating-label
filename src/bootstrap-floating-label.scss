@@ -51,11 +51,11 @@
 //
 // top: - label height + (label height / 2)
 //
-$label-height-sm: $font-size-sm * $input-line-height-sm; // 21px
+$label-height-sm: $font-size-sm * $input-line-height; // 21px
 $label-top-position-sm: #{- $label-height-sm + $label-height-sm / 2.5}; // -21px + (21px / 2) = -10.5px
 $label-height-md: $font-size-base * $input-line-height; // 24px
 $label-top-position-md: #{- $label-height-md + $label-height-md / 2.5}; // -24px + (24px / 2) = -12px
-$label-height-lg: $font-size-lg * $input-line-height-lg; // 30px
+$label-height-lg: $font-size-lg * $input-line-height; // 30px
 $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px + (30px / 2) = -15px
 
 @mixin label-common {
