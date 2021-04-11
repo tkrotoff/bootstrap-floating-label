@@ -27,7 +27,7 @@
   }
 
   // If no placeholder and no value => always above
-  // Place an empty placeholder (<input placeholder="">) to get the label inside the input
+  // Place an empty placeholder (<input placeholder=" ">) to get the label inside the input
   > input:not([placeholder]):not([value]),
   > textarea:not([placeholder]):empty {
     @include label-above-input();
