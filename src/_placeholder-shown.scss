@@ -26,12 +26,6 @@
     }
   }
 
-  // FIXME https://github.com/postcss/autoprefixer/issues/1311
-  > input[placeholder]:not(:-ms-input-placeholder),
-  > textarea[placeholder]:not(:-ms-input-placeholder) {
-    @include label-above-input();
-  }
-
   // If no placeholder and no value => always above
   // Place an empty placeholder (<input placeholder="">) to get the label inside the input
   > input:not([placeholder]):not([value]),
