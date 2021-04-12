@@ -5,17 +5,19 @@
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Airbnb Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
 
-Floating label for Bootstrap 4
+Floating label for Bootstrap 5
 
 <img src="doc/demo.gif" alt="demo" width="191">
 
 Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/codesandbox.io
 
 - Small: less than 200 lines of [SCSS](src/bootstrap-floating-label.scss)
-- Works with Chrome/Chromium, Firefox, Safari and IE >= 10
+- Works with Chrome/Chromium, Firefox, Safari and IE
 - Lower support for Edge <= 18/44 (see [`:placeholder-shown` not supported](https://web.archive.org/web/20190624214425/https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951--placeholder-shown-css-pseudo-class) and [Can I use placeholder-shown?](https://caniuse.com/#search=placeholder-shown))
 - Works with any font family and size
-- Uses [Bootstrap variables](https://getbootstrap.com/docs/4.6/getting-started/theming/#variable-defaults)
+- Uses [Bootstrap variables](https://getbootstrap.com/docs/5.0/customize/sass/#variable-defaults)
+
+⚠️ Latest implementation for Bootstrap 4 is [@tkrotoff/bootstrap-floating-label v0.8](https://github.com/tkrotoff/bootstrap-floating-label/tree/v0.8.0)
 
 The Nielsen Norman Group talks about ["Placeholders and Floating Labels disadvantages"](https://www.nngroup.com/articles/form-design-placeholders/)
 
@@ -31,7 +33,7 @@ Import [bootstrap-floating-label.scss](src/bootstrap-floating-label.scss) after 
 @import '~@tkrotoff/bootstrap-floating-label/src/bootstrap-floating-label';
 ```
 
-Place `<label>` under `<input>` inside your [Bootstrap code](https://getbootstrap.com/docs/4.6/components/forms/):
+Place `<label>` under `<input>` inside your [Bootstrap code](https://getbootstrap.com/docs/5.0/forms/overview/):
 
 ```HTML
 <div class="floating-label">
