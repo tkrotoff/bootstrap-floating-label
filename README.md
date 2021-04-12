@@ -15,7 +15,7 @@ Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/
 - Works with Chrome/Chromium, Firefox, Safari and IE >= 10
 - Lower support for Edge <= 18/44 (see [`:placeholder-shown` not supported](https://web.archive.org/web/20190624214425/https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951--placeholder-shown-css-pseudo-class) and [Can I use placeholder-shown?](https://caniuse.com/#search=placeholder-shown))
 - Works with any font family and size
-- Uses [Bootstrap variables](https://getbootstrap.com/docs/4.5/getting-started/theming/#variable-defaults): nothing hardcoded
+- Uses [Bootstrap variables](https://getbootstrap.com/docs/4.6/getting-started/theming/#variable-defaults)
 
 The Nielsen Norman Group talks about ["Placeholders and Floating Labels disadvantages"](https://www.nngroup.com/articles/form-design-placeholders/)
 
@@ -31,7 +31,7 @@ Import [bootstrap-floating-label.scss](src/bootstrap-floating-label.scss) after 
 @import '~@tkrotoff/bootstrap-floating-label/src/bootstrap-floating-label';
 ```
 
-Place `<label>` under `<input>` inside your [Bootstrap code](https://getbootstrap.com/docs/4.5/components/forms/):
+Place `<label>` under `<input>` inside your [Bootstrap code](https://getbootstrap.com/docs/4.6/components/forms/):
 
 ```HTML
 <div class="floating-label">
