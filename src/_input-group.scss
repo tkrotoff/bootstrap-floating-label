@@ -1,0 +1,47 @@
+// Bootstrap does ".input-group > .form-control" which is not compatible with our HTML
+// We need ".input-group > .floating-label > .form-control" instead
+.input-group {
+  > .floating-label {
+    // Instead of using flex-fill:
+    //
+    // <div class="input-group">
+    //   ...
+    //   <div class="floating-label flex-fill">
+    //     ...
+    //   </div>
+    //   ...
+    // </div>
+    //
+    // Also "flex: 1" is better than flex-fill in our case: behaves like the original Bootstrap HTML
+    flex: 1;
+
+    // Fix focus
+    //
+    // Copy-pasted and adapted from https://github.com/twbs/bootstrap/blob/v5.0.0-beta3/scss/forms/_input-group.scss#L12-L24
+    > .form-control,
+    > .form-select {
+      position: relative;
+    }
+    > .form-control:focus,
+    > .form-select:focus {
+      z-index: 3;
+    }
+    ///
+
+    &:not(:first-child) {
+      > .form-control,
+      > .form-select {
+        // https://github.com/twbs/bootstrap/blob/v5.0.0-beta3/scss/forms/_input-group.scss#L119
+        @include border-start-radius(0);
+      }
+    }
+
+    &:not(:last-child) {
+      > .form-control,
+      > .form-select {
+        // https://github.com/twbs/bootstrap/blob/v5.0.0-beta3/scss/forms/_input-group.scss#L101
+        @include border-end-radius(0);
+      }
+    }
+  }
+}
