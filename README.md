@@ -13,7 +13,6 @@ Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/
 
 - Small: less than 200 lines of [SCSS](src/bootstrap-floating-label.scss)
 - Works with Chrome/Chromium, Firefox, Safari and IE >= 10
-- Lower support for Edge <= 18/44 (see [`:placeholder-shown` not supported](https://web.archive.org/web/20190624214425/https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12435951--placeholder-shown-css-pseudo-class) and [Can I use placeholder-shown?](https://caniuse.com/#search=placeholder-shown))
 - Works with any font family and size
 - Uses [Bootstrap variables](https://getbootstrap.com/docs/5.0/customize/sass/#variable-defaults)
 
