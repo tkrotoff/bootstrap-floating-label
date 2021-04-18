@@ -1,3 +1,9 @@
+## 0.10.0 (2021/04/18)
+
+- Switch from Bootstrap 4 to Bootstrap 5 (5.0.0-beta3)
+- Handle input-group cleanly
+- Remove old Edge hack
+
 ## 0.8.0 (2021/04/18)
 
 - Remove the `input[value]` hack (#9)
