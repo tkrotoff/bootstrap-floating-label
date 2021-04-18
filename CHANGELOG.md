@@ -1,3 +1,11 @@
+## 0.8.0 (2021/04/18)
+
+- Remove the `input[value]` hack (#9)
+- Fix Bootstrap peer dependency
+- Fix label color for disabled/readonly input & disabled select
+- Refactor example: make things more clear
+- Update npm packages
+
 ## 0.7.0 (2020/05/14)
 
 - Support for IE >= 10 :-ms-input-placeholder
