@@ -2,17 +2,7 @@
 // We need ".input-group > .floating-label > .form-control" instead
 .input-group {
   > .floating-label {
-    // Instead of using flex-fill:
-    //
-    // <div class="input-group">
-    //   ...
-    //   <div class="floating-label flex-fill">
-    //     ...
-    //   </div>
-    //   ...
-    // </div>
-    //
-    // Also "flex: 1" is better than flex-fill in our case: behaves like the original Bootstrap HTML
+    // https://github.com/twbs/bootstrap/blob/v5.0.0-beta3/scss/forms/_input-group.scss#L15
     flex: 1;
 
     // Fix focus
