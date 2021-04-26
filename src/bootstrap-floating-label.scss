@@ -66,7 +66,7 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
   z-index: 3;
 
   // Truncate the text label if larger than the input
-  max-width: 100%;
+  max-width: calc(100% - #{$input-border-width * 2});
   @include text-truncate();
 }
 
@@ -87,8 +87,8 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
 @mixin label-inside-input-common {
   @include label-common();
 
-  top: 0;
-  left: 0;
+  top: $input-border-width;
+  left: $input-border-width;
 
   color: $input-placeholder-color;
 
@@ -106,8 +106,7 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
 @mixin label-inside-input-sm {
   @include label-inside-input-common();
   @include font-size($input-font-size-sm);
-  padding: calc(#{$input-padding-y-sm} + #{$input-border-width})
-    calc(#{$input-padding-x-sm} + #{$input-border-width});
+  padding: $input-padding-y-sm $input-padding-x-sm;
 }
 
 @mixin label-inside-input-md {
@@ -115,15 +114,13 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
   @include font-size($input-font-size);
 
   // https://github.com/twbs/bootstrap/blob/v5.0.0-beta3/scss/_variables.scss#L679
-  padding: calc(#{$input-padding-y} + #{$input-border-width})
-    calc(#{$input-padding-x} + #{$input-border-width});
+  padding: $input-padding-y $input-padding-x;
 }
 
 @mixin label-inside-input-lg {
   @include label-inside-input-common();
   @include font-size($input-font-size-lg);
-  padding: calc(#{$input-padding-y-lg} + #{$input-border-width})
-    calc(#{$input-padding-x-lg} + #{$input-border-width});
+  padding: $input-padding-y-lg $input-padding-x-lg;
 }
 
 // Taken from ["Sign in"/"Create your Google Account"](https://accounts.google.com/signin/v2/identifier)
