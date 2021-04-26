@@ -279,6 +279,33 @@
         </label>
       </div>
 
+      <h2>label transition background-color</h2>
+
+      <div class="mb-3 floating-label">
+        <input id="label-transition-background-color-no-placeholder" class="form-control" />
+        <label for="label-transition-background-color-no-placeholder">input text</label>
+      </div>
+      <script>
+        const inputNoPlaceholder = document.getElementById(
+          'label-transition-background-color-no-placeholder'
+        );
+        setInterval(() => (inputNoPlaceholder.disabled = !inputNoPlaceholder.disabled), 5000);
+      </script>
+
+      <div class="mb-3 floating-label">
+        <input
+          id="label-transition-background-color-value"
+          class="form-control"
+          placeholder=" "
+          value="Lorem ipsum dolor sit amet"
+        />
+        <label for="label-transition-background-color-value">input text</label>
+      </div>
+      <script>
+        const inputValue = document.getElementById('label-transition-background-color-value');
+        setInterval(() => (inputValue.disabled = !inputValue.disabled), 5000);
+      </script>
+
       <h2>textarea</h2>
 
       <div class="mb-3 floating-label">

@@ -19,11 +19,6 @@
   > input[placeholder]:not(:placeholder-shown),
   > textarea[placeholder]:not(:placeholder-shown) {
     @include label-above-input();
-
-    &:disabled + label,
-    &[readonly] + label {
-      background-color: $input-disabled-bg;
-    }
   }
 
   // If no placeholder and no value => always above
@@ -31,10 +26,5 @@
   > input:not([placeholder]):not([value]),
   > textarea:not([placeholder]):empty {
     @include label-above-input();
-
-    &:disabled + label,
-    &[readonly] + label {
-      background-color: $input-disabled-bg;
-    }
   }
 }
