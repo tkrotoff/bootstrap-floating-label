@@ -1,3 +1,8 @@
+## 0.11.0 (2021/04/29)
+
+- Remove label's disabled background-color: doesn't play nice with transition
+- Smaller line-height for the label
+
 ## 0.10.0 (2021/04/18)
 
 - Switch from Bootstrap 4 to Bootstrap 5 (5.0.0-beta3)
