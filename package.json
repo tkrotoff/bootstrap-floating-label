@@ -32,7 +32,8 @@
     "prepush": "npm run precommit",
     "prepublishOnly": "npm run build",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install",
-    "publish:beta": "npm version 0.7.0-beta.1 && npm publish --tag next --dry-run"
+    "publish:beta": "npm version 0.7.0-beta.1 && npm publish --tag next --dry-run",
+    "count-loc:build:css": "find dist -name '*.css' | xargs wc -l"
   },
   "dependencies": {},
   "peerDependencies": {
