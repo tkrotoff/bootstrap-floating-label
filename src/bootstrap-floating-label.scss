@@ -15,47 +15,47 @@
 // - https://stackoverflow.com/q/50686342
 // - https://github.com/exacti/floating-labels
 
+//  __________________________________
+// |_______________________________   |
+// |                               | <== label
+// |                               |  |
+// |_______________________________|  | <== input
+// |__________________________________|
+//
+//  __________________________________
+// | top: 0                        |  |
+// |                               |  |
+// |_______________________________|  |
+// |                                  |
+// |__________________________________|
+//
 //  _______________________________
-// |____________________________   |
-// |                            | <== label
-// |                            |  |
-// |____________________________|  | <== input
-// |_______________________________|
+// | top: - label height (-17.4px) |
+// |                               |
+// |_______________________________|__
+// |                                  |
+// |                                  |
+// |                                  |
+// |                                  |
+// |__________________________________|
 //
-//  ______________________________
-// | top: 0                     |  |
-// |                            |  |
-// |____________________________|  |
-// |                               |
-// |_______________________________|
+//  _______________________________
+// | top: - 17.4px * 3/5           |
+// |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|__
+// |_______________________________|  |
+// |                                  |
+// |                                  |
+// |                                  |
+// |__________________________________|
 //
-//  ____________________________
-// | top: -label height (-21px) |
-// |                            |
-// |____________________________|__
-// |                               |
-// |                               |
-// |                               |
-// |                               |
-// |_______________________________|
+// top: - label height * 3/5
 //
-//  ____________________________
-// | top: -21px + (21px / 2.5)  |
-// |_ _ _ _ _ _ _ _ _ _ _ _ _ _ |__
-// |____________________________|  |
-// |                               |
-// |                               |
-// |                               |
-// |_______________________________|
-//
-// top: - label height + (label height / 2.5)
-//
-$label-height-sm: $font-size-sm * $input-line-height; // 21px
-$label-top-position-sm: #{- $label-height-sm + $label-height-sm / 2.5}; // -21px + (21px / 2.5) = -12.6px
-$label-height-md: $font-size-base * $input-line-height; // 24px
-$label-top-position-md: #{- $label-height-md + $label-height-md / 2.5}; // -24px + (24px / 2.5) = -14.4px
-$label-height-lg: $font-size-lg * $input-line-height; // 30px
-$label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px + (30px / 2.5) = -18px
+$label-height-sm: $font-size-sm * $line-height-sm; // 17.4px
+$label-top-position-sm: $label-height-sm * 3 / 5; // 17.4px * 3/5 = 10.44px
+$label-height-md: $font-size-base * $line-height-sm; // 20px
+$label-top-position-md: $label-height-md * 3 / 5; // 20px * 3/5 = 12px
+$label-height-lg: $font-size-lg * $line-height-sm; // 25px
+$label-top-position-lg: $label-height-lg * 3 / 5; // 25px * 3/5 = 15px
 
 @mixin label-common {
   // Breaks flexbox :-/
@@ -68,6 +68,9 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
   // Truncate the text label if larger than the input
   max-width: calc(100% - #{$input-border-width * 2});
   @include text-truncate();
+
+  // Instead of 1.5 https://github.com/twbs/bootstrap/blob/v5.0.0-beta3/scss/_variables.scss#L440
+  line-height: $line-height-sm;
 }
 
 // stylelint-disable declaration-no-important
@@ -158,24 +161,43 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
   + label,
   + label.label-sm {
-    top: $label-top-position-sm;
+    top: -$label-top-position-sm;
     font-size: $font-size-sm;
     // https://stackoverflow.com/a/44156191
     // [Safari bug with transition and translateY: “jumping” element](https://stackoverflow.com/q/57960955)
     //transform: translateY(-55%);
   }
   + label.label-md {
-    top: $label-top-position-md;
+    top: -$label-top-position-md;
     font-size: $font-size-base;
   }
   + label.label-lg {
-    top: $label-top-position-lg;
+    top: -$label-top-position-lg;
     font-size: $font-size-lg;
   }
 }
 
 .floating-label {
   position: relative;
+
+  // FIXME Cannot use min-height or margin-top: breaks input-group
+  //
+  // FIXME Cannot set correct margin-top when .label-md or .label-lg is used
+  // [Apply style to parent if it has child with CSS](https://stackoverflow.com/q/21252551)
+  //
+  // https://github.com/twbs/bootstrap/blob/v5.0.0-beta3/scss/_variables.scss#L722
+  //
+  // Should we also add the input focus border width ($input-btn-focus-width) to the height?
+  // => This is not what is done for inputs with Bootstrap v5.0.0-beta3
+  //
+  // min-height: calc(#{$input-height} + #{$label-top-position-sm});
+  // margin-top: $label-top-position-sm;
+  // &.form-control-sm {
+  //   margin-top: $label-top-position-sm;
+  // }
+  // &.form-control-lg {
+  //   margin-top: $label-top-position-sm;
+  // }
 
   > select {
     @include label-above-input();
