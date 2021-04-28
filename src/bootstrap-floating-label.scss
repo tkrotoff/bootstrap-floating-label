@@ -128,24 +128,6 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
 // https://github.com/twbs/bootstrap/blob/v5.0.0-beta3/scss/_variables.scss#L396
 $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
-@mixin label-above-input-common {
-  @include label-common();
-
-  left: $input-padding-x-sm;
-
-  padding: 0 0.3rem;
-
-  color: inherit;
-
-  // Hack to hide the input border under the label
-  background-color: $input-bg;
-
-  // Visible when the label is above an input with a different background color
-  border-radius: $border-radius;
-
-  @extend %label-above-input-rtl;
-}
-
 // If a browser does not support a CSS pseudo-element, we cannot group/merge it with other CSS pseudo-elements:
 // input:focus + label, input:-webkit-autofill + label { ... } // Does not work in Firefox
 // Instead we have to ungroup/unmerge them:
@@ -157,37 +139,42 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 // This is a hack:
 // - if we want to group (share CSS) => use a placeholder class
 // - if we want to ungroup (clone CSS) => use a mixin
-@mixin label-above-input-sm {
-  @include label-above-input-common();
-  top: $label-top-position-sm;
-  font-size: $font-size-sm;
-  // https://stackoverflow.com/a/44156191
-  // [Safari bug with transition and translateY: “jumping” element](https://stackoverflow.com/q/57960955)
-  //transform: translateY(-55%);
-}
-
-@mixin label-above-input-md {
-  @include label-above-input-common();
-  top: $label-top-position-md;
-  font-size: $font-size-base;
-}
-
-@mixin label-above-input-lg {
-  @include label-above-input-common();
-  top: $label-top-position-lg;
-  font-size: $font-size-lg;
-}
-
 @mixin label-above-input {
+  + label {
+    @include label-common();
+
+    left: $input-padding-x-sm;
+
+    padding: 0 0.3rem;
+
+    color: inherit;
+
+    // Hack to hide the input border under the label
+    // [How to inherit grandparent CSS not parent?](https://stackoverflow.com/q/18543810)
+    // https://www.quora.com/How-can-I-use-inherit-proprety-in-css-to-come-from-the-root-parent-and-not-the-first-parent
+    background-color: $input-bg;
+
+    // Visible when the label is above an input with a different background color
+    border-radius: $border-radius;
+
+    @extend %label-above-input-rtl;
+  }
+
   + label,
   + label.label-sm {
-    @include label-above-input-sm();
+    top: $label-top-position-sm;
+    font-size: $font-size-sm;
+    // https://stackoverflow.com/a/44156191
+    // [Safari bug with transition and translateY: “jumping” element](https://stackoverflow.com/q/57960955)
+    //transform: translateY(-55%);
   }
   + label.label-md {
-    @include label-above-input-md();
+    top: $label-top-position-md;
+    font-size: $font-size-base;
   }
   + label.label-lg {
-    @include label-above-input-lg();
+    top: $label-top-position-lg;
+    font-size: $font-size-lg;
   }
 }
 
