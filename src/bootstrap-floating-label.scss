@@ -135,7 +135,7 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 // This is a hack:
 // - if we want to group (share CSS) => use a placeholder class
 // - if we want to ungroup (clone CSS) => use a mixin
-@mixin label-above-input {
+@mixin label-above-input($focus: false) {
   + label {
     @include label-common();
 
@@ -145,15 +145,44 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
     color: inherit;
 
-    // Hack to hide the input border under the label
-    // [How to inherit grandparent CSS not parent?](https://stackoverflow.com/q/18543810)
-    // https://www.quora.com/How-can-I-use-inherit-proprety-in-css-to-come-from-the-root-parent-and-not-the-first-parent
-    background-color: $input-bg;
-
-    // Visible when the label is above an input with a different background color
-    border-radius: $border-radius;
-
     @extend %label-above-input-rtl;
+
+    // Hack to hide the input border under the label
+    &::after {
+      position: absolute;
+
+      right: 0;
+      left: 0;
+      z-index: -1;
+
+      // stylelint-disable declaration-no-important
+      @if ($focus) {
+        top: 41% !important; // 8.5px
+        // https://github.com/twbs/bootstrap/blob/v4.6.0/scss/mixins/_forms.scss#L23
+        // https://github.com/twbs/bootstrap/blob/v4.6.0/scss/_variables.scss#L393
+        height: calc(#{$input-border-width} + #{$input-btn-focus-width}) !important;
+      } @else {
+        top: 60%; // 12.5px
+        // https://github.com/twbs/bootstrap/blob/v4.6.0/scss/_forms.scss#L19
+        // https://github.com/twbs/bootstrap/blob/v4.6.0/scss/_variables.scss#L237
+        height: $input-border-width;
+      }
+      // stylelint-enable declaration-no-important
+
+      content: ' ';
+
+      // Hack to hide the input border under the label
+      // [How to inherit grandparent CSS not parent?](https://stackoverflow.com/q/18543810)
+      // https://www.quora.com/How-can-I-use-inherit-proprety-in-css-to-come-from-the-root-parent-and-not-the-first-parent
+      background-color: $input-bg;
+    }
+  }
+
+  &:disabled,
+  &[readonly] {
+    + label::after {
+      background-color: $input-disabled-bg;
+    }
   }
 
   + label,
@@ -179,6 +208,9 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
   > select {
     @include label-above-input();
+    &:focus {
+      @include label-above-input($focus: true);
+    }
   }
 
   // Initial state: the label is inside the input
@@ -213,7 +245,7 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     // - move the label above the input
-    @include label-above-input();
+    @include label-above-input($focus: true);
   }
 }
 
