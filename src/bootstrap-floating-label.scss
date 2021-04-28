@@ -84,43 +84,39 @@ $label-top-position-lg: #{- $label-height-lg + $label-height-lg / 2.5}; // -30px
 }
 // stylelint-enable declaration-no-important
 
-@mixin label-inside-input-common {
-  @include label-common();
+@mixin label-inside-input() {
+  + label {
+    @include label-common();
 
-  top: $input-border-width;
-  left: $input-border-width;
+    top: $input-border-width;
+    left: $input-border-width;
 
-  color: $input-placeholder-color;
+    @include font-size($input-font-size);
+    padding: $input-padding-y $input-padding-x;
 
-  // FIXME Why the label shouldn't be clickable?
-  //
-  // Material-UI uses "pointer-events: none" for TextField outlined variant,
-  // see https://github.com/mui-org/material-ui/blob/v4.9.7/packages/material-ui/src/InputLabel/InputLabel.js#L73
-  //
-  // Google does the same in ["Sign in"/"Create your Google Account"](https://accounts.google.com/signin/v2/identifier)
-  pointer-events: none;
+    color: $input-placeholder-color;
 
-  @extend %label-inside-input-rtl;
-}
+    // FIXME Why the label shouldn't be clickable?
+    //
+    // Material-UI uses "pointer-events: none" for TextField outlined variant,
+    // see https://github.com/mui-org/material-ui/blob/v4.9.7/packages/material-ui/src/InputLabel/InputLabel.js#L73
+    //
+    // Google does the same in ["Sign in"/"Create your Google Account"](https://accounts.google.com/signin/v2/identifier)
+    pointer-events: none;
 
-@mixin label-inside-input-sm {
-  @include label-inside-input-common();
-  @include font-size($input-font-size-sm);
-  padding: $input-padding-y-sm $input-padding-x-sm;
-}
+    transition: all $transition-fast;
 
-@mixin label-inside-input-md {
-  @include label-inside-input-common();
-  @include font-size($input-font-size);
+    @extend %label-inside-input-rtl;
+  }
 
-  // https://github.com/twbs/bootstrap/blob/v5.0.0-beta3/scss/_variables.scss#L679
-  padding: $input-padding-y $input-padding-x;
-}
-
-@mixin label-inside-input-lg {
-  @include label-inside-input-common();
-  @include font-size($input-font-size-lg);
-  padding: $input-padding-y-lg $input-padding-x-lg;
+  &.form-control-sm + label {
+    @include font-size($input-font-size-sm);
+    padding: $input-padding-y-sm $input-padding-x-sm;
+  }
+  &.form-control-lg + label {
+    @include font-size($input-font-size-lg);
+    padding: $input-padding-y-lg $input-padding-x-lg;
+  }
 }
 
 // Taken from ["Sign in"/"Create your Google Account"](https://accounts.google.com/signin/v2/identifier)
@@ -186,18 +182,9 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   // Initial state: the label is inside the input
-  > input + label,
-  > textarea + label {
-    transition: all $transition-fast;
-    @include label-inside-input-md();
-  }
-  > input.form-control-sm + label,
-  > textarea.form-control-sm + label {
-    @include label-inside-input-sm();
-  }
-  > input.form-control-lg + label,
-  > textarea.form-control-lg + label {
-    @include label-inside-input-lg();
+  > input,
+  > textarea {
+    @include label-inside-input();
   }
 
   // Initial state: hide the placeholder
