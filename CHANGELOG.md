@@ -1,3 +1,7 @@
+## 0.11.1 (2021/05/07)
+
+- Fix label line-height
+
 ## 0.11.0 (2021/04/29)
 
 - Remove label's disabled background-color: doesn't play nice with transition
