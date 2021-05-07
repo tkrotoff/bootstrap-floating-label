@@ -68,9 +68,6 @@ $label-top-position-lg: $label-height-lg * 3 / 5; // 25px * 3/5 = 15px
   // Truncate the text label if larger than the input
   max-width: calc(100% - #{$input-border-width * 2});
   @include text-truncate();
-
-  // Instead of 1.5 https://github.com/twbs/bootstrap/blob/v5.0.0-beta3/scss/_variables.scss#L440
-  line-height: $line-height-sm;
 }
 
 // stylelint-disable declaration-no-important
@@ -145,6 +142,9 @@ $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     left: $input-padding-x-sm;
 
     padding: 0 0.3rem;
+
+    // Instead of 1.5 https://github.com/twbs/bootstrap/blob/v5.0.0-beta3/scss/_variables.scss#L440
+    line-height: $line-height-sm;
 
     color: inherit;
 
