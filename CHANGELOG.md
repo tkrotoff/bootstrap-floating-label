@@ -1,3 +1,8 @@
+## 0.11.2 (2021/05/08)
+
+- Update npm packages
+- Bootstrap 5.0.0 (instead of 5.0.0-beta3)
+
 ## 0.11.1 (2021/05/07)
 
 - Fix label line-height
