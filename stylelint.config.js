@@ -12,7 +12,8 @@ const config = {
   ],
 
   rules: {
-    'selector-no-qualifying-type': null
+    'selector-no-qualifying-type': null,
+    'no-invalid-position-at-import-rule': null
   }
 };
 

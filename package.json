@@ -37,18 +37,18 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "bootstrap": ">=5.0.0-beta3"
+    "bootstrap": ">=5.0.0"
   },
   "devDependencies": {
-    "bootstrap": "^5.0.0-beta3",
+    "bootstrap": "^5.0.0",
     "husky": "^6.0.0",
-    "parcel-bundler": "^1.12.4",
+    "parcel-bundler": "^1.12.5",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.2.1",
-    "sass": "^1.32.8",
-    "stylelint": "^13.12.0",
+    "sass": "^1.32.12",
+    "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-twbs-bootstrap": "^2.1.0",
+    "stylelint-config-twbs-bootstrap": "^2.2.0",
     "stylelint-prettier": "^1.2.0",
     "typescript": "^4.2.4"
   }
