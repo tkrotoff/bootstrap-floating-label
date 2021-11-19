@@ -40,7 +40,7 @@
 // |__________________________________|
 //
 //  _______________________________
-// | top: - 17.4px * 3/5           |
+// | top: - 17.4px * 3/5 (0.6)     |
 // |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|__
 // |_______________________________|  |
 // |                                  |
@@ -48,14 +48,14 @@
 // |                                  |
 // |__________________________________|
 //
-// top: - label height * 3/5
+// top: - label height * 3/5 (0.6)
 //
 $label-height-sm: $font-size-sm * $line-height-sm; // 17.4px
-$label-top-position-sm: $label-height-sm * 3 / 5; // 17.4px * 3/5 = 10.44px
+$label-top-position-sm: $label-height-sm * 0.6; // 17.4px * 0.6 = 10.44px
 $label-height-md: $font-size-base * $line-height-sm; // 20px
-$label-top-position-md: $label-height-md * 3 / 5; // 20px * 3/5 = 12px
+$label-top-position-md: $label-height-md * 0.6; // 20px * 0.6 = 12px
 $label-height-lg: $font-size-lg * $line-height-sm; // 25px
-$label-top-position-lg: $label-height-lg * 3 / 5; // 25px * 3/5 = 15px
+$label-top-position-lg: $label-height-lg * 0.6; // 25px * 0.6 = 15px
 
 @mixin label-common {
   // Breaks flexbox :-/
