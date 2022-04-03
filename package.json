@@ -16,11 +16,11 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rm -rf dist .cache",
+    "clean": "rm -rf dist .parcel-cache",
     "clean:all": "npm run clean && rm -rf node_modules package-lock.json",
     "start": "npm run clean && parcel example/index.html --open",
     "build": "npm run clean && parcel build example/index.html --public-url ./",
-    "build:dev": "npm run clean && NODE_ENV=development parcel build example/index.html --no-minify --public-url ./",
+    "build:dev": "npm run clean && NODE_ENV=development parcel build example/index.html --no-optimize --public-url ./",
     "tsc": "tsc",
     "format": "prettier --write '**/*'",
     "lint": "stylelint '**/*.scss' && npm run tsc",
@@ -37,16 +37,15 @@
     "bootstrap": ">=5"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.4.1",
     "bootstrap": "^5.1.3",
     "husky": "^7.0.4",
-    "parcel-bundler": "^1.12.5",
-    "postcss-preset-env": "^6.7.0",
-    "prettier": "^2.5.0",
-    "sass": "^1.43.5",
-    "stylelint": "^13.13.1",
+    "parcel": "^2.4.1",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.6.1",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-twbs-bootstrap": "^2.2.4",
-    "stylelint-prettier": "^1.2.0",
-    "typescript": "^4.5.2"
+    "stylelint-config-twbs-bootstrap": "^3.0.1",
+    "stylelint-prettier": "^2.0.0",
+    "typescript": "^4.6.3"
   }
 }

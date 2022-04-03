@@ -3,7 +3,7 @@
 .prettierignore
 .editorconfig
 .browserslistrc
-.cache/
+.parcel-cache/
 .husky/
 
 dist/
