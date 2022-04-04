@@ -1,3 +1,8 @@
+## 0.11.4 (2021/04/11)
+
+- Update npm packages, switch to Parcel 2
+- Examples with validation
+
 ## 0.11.3 (2021/11/26)
 
 - Fix "Deprecation Warning: Using / for division is deprecated and will be removed in Dart Sass 2.0.0"
