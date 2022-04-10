@@ -17,9 +17,9 @@
   "scripts": {
     "clean": "rm -rf dist .parcel-cache",
     "clean:all": "npm run clean && rm -rf node_modules package-lock.json",
-    "start": "npm run clean && parcel example/index.html --open",
-    "build": "npm run clean && parcel build example/index.html --public-url ./",
-    "build:dev": "npm run clean && NODE_ENV=development parcel build example/index.html --no-optimize --public-url ./",
+    "start": "npm run clean && parcel index.html --open",
+    "build": "npm run clean && parcel build index.html --public-url ./",
+    "build:dev": "npm run clean && NODE_ENV=development parcel build index.html --no-optimize --public-url ./",
     "tsc": "tsc",
     "format": "prettier --write '**/*'",
     "lint": "stylelint '**/*.scss' && npm run tsc",
