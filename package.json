@@ -25,7 +25,7 @@
     "format": "prettier --write '**/*'",
     "lint": "stylelint '**/*.scss' && npm run tsc",
     "prepare": "husky install",
-    "precommit": "npm run format && npm run tsc && npm run lint && npm run build",
+    "precommit": "npm run format && npm run lint && npm run build",
     "prepush": "npm run precommit",
     "prepublishOnly": "npm run build",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install",
