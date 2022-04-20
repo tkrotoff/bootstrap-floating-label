@@ -38,7 +38,7 @@
     "husky": "^7.0.4",
     "parcel": "^2.4.1",
     "prettier": "^2.6.2",
-    "stylelint": "^14.6.1",
+    "stylelint": "^14.7.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-twbs-bootstrap": "^3.0.1",
     "stylelint-prettier": "^2.0.0",
