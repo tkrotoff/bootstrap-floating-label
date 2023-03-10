@@ -12,7 +12,7 @@ Floating label for Bootstrap 5
 Example: https://codesandbox.io/s/github/tkrotoff/bootstrap-floating-label/tree/codesandbox.io
 
 - Small: less than 200 lines of [SCSS](src/bootstrap-floating-label.scss)
-- Works with Chrome/Chromium, Firefox, Safari and IE
+- Works with modern browsers
 - Works with any font family and size
 - Uses [Bootstrap variables](https://getbootstrap.com/docs/5.0/customize/sass/#variable-defaults)
 
