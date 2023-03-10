@@ -66,7 +66,7 @@ $label-top-position-lg: $label-height-lg * 0.6; // 25px * 0.6 = 15px
   z-index: 3;
 
   // Truncate the text label if larger than the input
-  max-width: calc(100% - #{$input-border-width * 2});
+  max-width: calc(100% - $input-border-width * 2);
   @include text-truncate();
 }
 
