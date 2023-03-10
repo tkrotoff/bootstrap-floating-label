@@ -1,3 +1,7 @@
+## 0.12.1 (2023/03/11)
+
+- Publish only src/ to npm
+
 ## 0.12.0 (2023/03/10)
 
 - Fix "Error: Undefined operation "var(--bs-border-width) \* 2"" with Bootstrap 5.3

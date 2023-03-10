@@ -11,6 +11,9 @@
     "float",
     "label"
   ],
+  "files": [
+    "src/"
+  ],
   "scripts": {
     "clean": "rm -rf dist .parcel-cache",
     "clean:all": "npm run clean && rm -rf node_modules package-lock.json",
