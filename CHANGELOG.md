@@ -1,3 +1,8 @@
+## 0.12.0 (2023/03/10)
+
+- Fix "Error: Undefined operation "var(--bs-border-width) \* 2"" with Bootstrap 5.3
+- Old browsers not tested anymore
+
 ## 0.11.5 (2021/04/20)
 
 - [Fix build by updating @parcel/css](https://github.com/parcel-bundler/parcel-css/issues/148) (+ other npm packages)
