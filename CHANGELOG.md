@@ -1,3 +1,7 @@
+## 0.12.2 (2023/03/11)
+
+- Fix z-index with Bootstrap >= 5.2.1
+
 ## 0.12.1 (2023/03/11)
 
 - Publish only src/ to npm

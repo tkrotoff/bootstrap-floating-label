@@ -62,8 +62,8 @@ $label-top-position-lg: $label-height-lg * 0.6; // 25px * 0.6 = 15px
   // ["An absolutely-positioned child of a flex container does not participate in flex layout"](https://stackoverflow.com/a/41033582)
   position: absolute;
 
-  // Same z-index as .form-control:focus, https://github.com/twbs/bootstrap/blob/v5.0.0-beta3/scss/forms/_input-group.scss#L23
-  z-index: 3;
+  // Same z-index as .form-control:focus, https://github.com/twbs/bootstrap/blob/v5.3.0-alpha1/scss/forms/_input-group.scss#L25
+  z-index: 5;
 
   // Truncate the text label if larger than the input
   max-width: calc(100% - $input-border-width * 2);
