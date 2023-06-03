@@ -12,6 +12,10 @@ const config = {
   ],
 
   rules: {
+    // FIXME https://github.com/twbs/stylelint-config-twbs-bootstrap/issues/206
+    'stylistic/string-quotes': null,
+    'stylistic/number-leading-zero': null,
+
     'selector-no-qualifying-type': null,
     'no-invalid-position-at-import-rule': null
   }
